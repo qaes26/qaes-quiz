@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المحور السابع: الإعلام والأمن الوطني</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Noto Sans Arabic for better Arabic rendering -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background: linear-gradient(135deg, #F7FDFD, #FDFBF7); /* Soft blue-grey gradient */
+            color: #34495E; /* Dark slate blue for main text */
+            line-height: 1.7; /* Comfortable line height */
+            scroll-behavior: smooth;
+            padding-top: 100px; /* Space for fixed navigation */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px; /* Slightly wider container */
+            margin: 2rem auto;
+            padding: 3rem; /* More internal padding */
+            background-color: #FFFFFF; /* Clean white background */
+            border-radius: 2.5rem; /* Even more rounded corners */
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18); /* Deeper, softer shadow */
+            border: 1px solid #EAF0F6; /* Very subtle border */
+            animation: fadeInSlideUp 0.9s ease-out forwards; /* Initial container animation */
+        }
+
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            font-weight: 900; /* Extra bold for impact */
+            color: #2C3E50; /* Darker slate blue for headings */
+            margin-bottom: 1.8rem; /* More space below headings */
+            text-shadow: 0 3px 10px rgba(44, 62, 80, 0.15); /* Soft, subtle text shadow */
+        }
+
+        /* Main Title (H1) */
+        .main-title-wrapper {
+            position: relative;
+            padding-bottom: 2.5rem; /* Space for decorative elements */
+            margin-bottom: 3rem; /* More space below title block */
+            text-align: center;
+        }
+        .main-title-wrapper::before,
+        .main-title-wrapper::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%; /* Wider decorative lines */
+            height: 3px; /* Thicker lines */
+            background: linear-gradient(to right, transparent, #4CAF50, transparent); /* Green gradient line */
+            border-radius: 2px;
+        }
+        .main-title-wrapper::before {
+            top: -1.5rem; /* Position further above */
+        }
+        .main-title-wrapper::after {
+            bottom: 0; /* Position at the bottom */
+        }
+
+        h1 {
+            font-size: 4.5rem; /* Even larger main title */
+            letter-spacing: 0.12em; /* More distinct letter spacing */
+            color: #2C3E50; /* Primary dark blue for main title */
+            text-shadow: 0 6px 20px rgba(44, 62, 80, 0.25); /* Stronger, more vibrant shadow */
+            /* Removed initial opacity and animation-delay to ensure visibility */
+            animation: bounceIn 1s ease-out forwards; /* Animation still applies */
+            position: relative;
+            z-index: 2;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+
+        .subtitle {
+            font-size: 2.2rem; /* Larger, clearer subtitle */
+            color: #5D6D7E; /* Darker grey for subtitle for better contrast */
+            /* Removed initial opacity and animation-delay to ensure visibility */
+            animation: fadeIn 1.2s ease-out forwards; /* Animation still applies */
+            text-align: center;
+            margin-top: 0.5rem; /* Closer to main title */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Section Title (H2) */
+        h2 {
+            font-size: 3.5rem; /* Larger section titles */
+            border-bottom: none; /* Remove default border-bottom */
+            padding-bottom: 0;
+            margin-top: 5rem; /* More space above sections */
+            position: relative;
+            display: block; /* Full width block */
+            padding-right: 0;
+            animation: slideInLeft 0.8s ease-out forwards; /* Entry animation for sections */
+            opacity: 0;
+            text-align: right; /* Align right for RTL */
+            padding-left: 20px; /* Space for decorative line */
+        }
+        h2::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px; /* Thicker vertical line */
+            height: 100%; /* Full height */
+            background-color: #4CAF50; /* Vibrant green line */
+            border-radius: 5px;
+            animation: expandLine 1s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+        h2::after {
+            content: '—'; /* Decorative dash */
+            position: absolute;
+            right: 20px; /* Adjust position */
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4CAF50;
+            font-size: 1.5em;
+            font-weight: 900;
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes expandLine {
+            from { height: 0; }
+            to { height: 100%; }
+        }
+
+        /* Sub-Section Title (H3) */
+        h3 {
+            font-size: 2.5rem; /* Larger sub-section titles */
+            color: #34495E; /* Slightly darker slate blue */
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            padding-right: 1.5rem; /* More indent */
+            border-right: 6px solid #66BB6A; /* Thicker accent border (lighter green) */
+            position: relative;
+            animation: fadeInRight 0.7s ease-out forwards;
+            opacity: 0;
+            border-radius: 0.5rem; /* Slightly rounded border */
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        h3::before {
+            content: '◆'; /* Diamond bullet */
+            position: absolute;
+            right: -20px; /* Further out */
+            top: 50%;
+            transform: translateY(-50%);
+            color: #66BB6A; /* Lighter green bullet */
+            font-size: 1.4em; /* Larger bullet */
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 1.8rem; /* More spacing */
+            color: #4A6572; /* Softer grey for body text */
+            font-size: 1.15rem; /* Slightly larger body text */
+        }
+        ul {
+            list-style-type: none; /* Remove default list style */
+            margin-right: 0;
+            margin-bottom: 1.8rem;
+            padding-right: 0;
+        }
+        li {
+            margin-bottom: 1rem; /* More space between list items */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px; /* Adjust padding for smaller nav */
+            }
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+                border-radius: 1rem;
+            }
+            h1 {
+                font-size: 3.5rem;
+                letter-spacing: 0.05em;
+            }
+            .subtitle {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 2.8rem;
+                margin-top: 3rem;
+            }
+            h3 {
+                font-size: 2rem;
+                margin-top: 2.5rem;
+            }
+            .nav-menu {
+                flex-direction: column;
+                padding: 0.75rem 0;
+                gap: 0.5rem;
+            }
+            .nav-menu a {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            .grid-cols-1.md\:grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            .main-title-wrapper::before,
+            .main-title-wrapper::after {
+                width: 90%;
+            }
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 1.2rem 0; /* More vertical padding */
+            border-bottom: 1px solid #EAF0F6;
+            display: flex;
+            justify-content: center;
+            gap: 2rem; /* More space between nav items */
+            width: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
+            border-radius: 0;
+        }
+        .nav-menu a {
+            color: #4CAF50; /* Vibrant green for nav links */
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0.8rem 1.5rem; /* Larger clickable area */
+            border-radius: 0.75rem;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden; /* For ripple effect */
+        }
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        .nav-menu a:hover::before {
+            transform: translateX(100%);
+        }
+        .nav-menu a:hover {
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            transform: translateY(-3px); /* More pronounced lift */
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4); /* Green shadow on hover */
+        }
+        .nav-menu a.active {
+            background-color: #388E3C; /* Darker green for active link */
+            color: #FFFFFF;
+            box-shadow: 0 5px 15px rgba(56, 142, 60, 0.5); /* Stronger green shadow for active */
+            transform: translateY(-1px); /* Slight lift for active */
+        }
+
+        /* Section Content Display (SPA logic) */
+        .content-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Slower, smoother transition */
+            padding-top: 2.5rem; /* Ensure padding for scroll target */
+            border-top: 1px dashed #D1D5DB; /* Subtle dashed border for separation */
+        }
+        .content-section:first-of-type {
+            border-top: none; /* No border for the very first section */
+        }
+        .content-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #FFFFFF; /* Pure white for card background */
+            border-radius: 1.5rem; /* More rounded */
+            padding: 2rem 2.8rem; /* More generous padding */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Softer, more diffuse shadow */
+            margin-bottom: 2.5rem; /* More space between cards */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #E0E7ED; /* Subtle border for definition */
+            position: relative; /* For decorative elements inside card */
+            overflow: hidden; /* Clip any overflow */
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 12px; /* Thicker accent */
+            height: 100%;
+            background-color: #A5D6A7; /* Light green accent on the side */
+            border-radius: 0 1.5rem 1.5rem 0; /* Rounded only on the right */
+            transition: width 0.3s ease;
+        }
+        .card:hover::before {
+            width: 18px; /* Expand accent on hover */
+        }
+        .card:hover {
+            transform: translateY(-10px); /* More pronounced lift on hover */
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        }
+        .card-title {
+            font-weight: 800;
+            color: #1A5276; /* Deep blue for card titles */
+            margin-bottom: 1rem;
+            font-size: 1.35rem; /* Larger card titles */
+            position: relative;
+            padding-right: 20px; /* Space for icon */
+        }
+        .card-title::before {
+            content: '✨'; /* Sparkle emoji */
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1em;
+            color: #4CAF50; /* Green sparkle */
+        }
+        .card-list-item {
+            color: #5D6D7E; /* Medium grey for card text */
+            font-size: 1.15rem; /* Larger card text */
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #E0E7ED;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #7F8C8D; /* Soft grey for footer text */
+        }
+    </style>
+</head>
+<body class="p-4">
+    <!-- Navigation Menu - Fixed at top -->
+    <div class="nav-menu">
+        <a href="#section1" class="nav-link" data-section="section1">الإعلام ودوره الوطني</a>
+        <a href="#section2" class="nav-link" data-section="section2">الجرائم الإلكترونية</a>
+        <a href="#section3" class="nav-link" data-section="section3">الإعلام ومكافحة التطرف</a>
+        <a href="#section4" class="nav-link" data-section="section4">التواصل الاجتماعي والأمن</a>
+    </div>
+
+    <div class="container">
+        <!-- Main Title and Subtitle -->
+        <div class="main-title-wrapper">
+            <h1 class="text-center" style="opacity: 1; animation: none;">المحور السابع: الإعلام والأمن الوطني</h1>
+            <p class="subtitle text-center" style="opacity: 1; animation: none; color: #4A6572;">إعداد وتقديم الطالب: قيس طلال غالب الجازي</p>
+        </div>
+
+        <!-- Section 1: الإعلام ودوره الوطني -->
+        <section id="section1" class="content-section active">
+            <h2 class="text-blue-700">أولاً: الإعلام ودوره الوطني</h2>
+            <p class="text-lg leading-relaxed">الإعلام ليس مجرد ناقل للأخبار، بل هو مؤسسة وطنية رئيسية تلعب دوراً محورياً في بناء التربية الوطنية للمجتمع. هذا الدور يتجلى من خلال عدة جوانب:</p>
+
+            <h3 class="text-blue-600">المؤسسات الإعلامية كأدوات وطنية:</h3>
+            <div class="card">
+                <p class="card-list-item">يحدد مؤسسات مثل مؤسسة الإذاعة والتلفزيون، وكالة الأنباء الأردنية (بترا)، مركز المعلومات الوطني، ووزارة الإعلام كأطراف رئيسية في نقل الصورة الإعلامية. هذه المؤسسات، بحكم طبيعتها الرسمية أو شبه الرسمية، يُتوقع منها أن تخدم الأهداف الوطنية.</p>
+            </div>
+
+            <h3 class="text-blue-600">الوظائف التربوية والوطنية للإعلام:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Increased gap for more space -->
+                <div class="card">
+                    <p class="card-title">نقل الأخبار المختلفة:</p>
+                    <p class="card-list-item">إبقاء المواطن على اطلاع بما يجري، وهو جزء أساسي من المواطنة الفاعلة.</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">التعبير عن الاتجاهات المختلفة في المجتمع:</p>
+                    <p class="card-list-item">من خلال توفير منصة للآراء المتنوعة، يساهم الإعلام في تعزيز الحوار الوطني وفهم وجهات النظر المختلفة، وهو أمر ضروري للتماسك الوطني.</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">توجيه المنظومة القيمية للمجتمع:</p>
+                    <p class="card-list-item">الإعلام له القدرة على التأثير في القيم السائدة، وبالتالي يمكنه المساهمة في تطوير الذات الوطنية والحفاظ على شخصية المجتمع وهويته من خلال التركيز على القيم الإيجابية التي تدعم الانتماء والوحدة.</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">الرد على الدعاية المضادة:</p>
+                    <p class="card-list-item">في عالم تتعدد فيه مصادر المعلومات والتأثيرات الخارجية، يلعب الإعلام دوراً دفاعياً في مواجهة الحملات التي قد تستهدف النيل من "عزة الآخرين" (المقصود هنا قد يكون الوطن أو رموزه أو قيمه). هذا يعني حماية الأمن الفكري والمعنوي للمجتمع.</p>
+                </div>
+            </div>
+
+            <h3 class="text-blue-600">شروط فعالية الدور الوطني للإعلام:</h3>
+            <div class="card">
+                <p class="card-list-item">لكي يتمكن الإعلام من أداء دوره الوطني بفعالية، يجب أن يستند إلى الحوار، الإبداع، تحقيق مفهوم حرية الرأي (المسؤولة)، والحاجة إلى رؤى واستراتيجيات ملائمة للعصر، بالإضافة إلى التسارع في نقل المعلومات واحترام الرأي والرأي الآخر. هذه العوامل تضمن إعلاماً قوياً ومؤثراً وقادراً على مخاطبة الجمهور والتأثير فيه إيجاباً.</p>
+            </div>
+
+            <h3 class="text-blue-600">تطور الدور الوطني للإعلام في عهد الملك عبد الله الثاني:</h3>
+            <div class="card">
+                <p class="card-list-item">هذا العهد شهد رفع مستوى الحرية الصحفية، والدعوة لإعلام وطني ومسؤول، والدعوة المستثمرة لإعلام فاعل يعبر عن مصالح الأردن والأردنيين. هذا يعكس فهماً لأهمية الإعلام الحر والمسؤول كأداة للتنمية الوطنية والتعبير عن الهوية.</p>
+            </div>
+
+            <h3 class="text-blue-600">تحديات تواجه الدور الوطني للإعلام:</h3>
+            <div class="card">
+                <p class="card-list-item">قضايا مثل نيل الثقة بين الجمهور والمؤسسات الإعلامية، وضرورة احترام آراء المواطنين، وإشراكهم في توجيه الرسالة الإعلامية، بالإضافة إلى المنافسة مع وسائل الإعلام الأخرى، كلها تحديات تؤثر على قدرة الإعلام على أداء دوره الوطني بفعالية.</p>
+            </div>
+
+            <h3 class="text-blue-600">خلاصة دور الإعلام الوطني:</h3>
+            <div class="card">
+                <p class="card-list-item">الإعلام هو أداة حيوية للتنشئة الوطنية، يعمل على إعلام المواطنين، تشكيل قيمهم، تعزيز هويتهم، والدفاع عن مصالح الوطن، ولكي يكون فعالاً، يجب أن يكون حراً ومسؤولاً ومتطوراً وقادراً على كسب ثقة الجمهور.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: الجرائم الإلكترونية: خطورتها وتأثيرها -->
+        <section id="section2" class="content-section">
+            <h2 class="text-blue-700">ثانياً: الجرائم الإلكترونية: خطورتها وتأثيرها</h2>
+            <p class="text-lg leading-relaxed">يُبرز خطورة الجرائم الإلكترونية وتأثيراتها المتعددة من خلال النقاط التالية:</p>
+
+            <h3 class="text-blue-600">الطبيعة والخصائص الخطيرة للجرائم الإلكترونية:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Increased gap for more space -->
+                <div class="card">
+                    <p class="card-title">عابرة للحدود:</p>
+                    <p class="card-list-item">خطورتها تكمن في صعوبة ملاحقة مرتكبيها الذين قد يكونون في دول أخرى، مما يعقد إجراءات التحقيق والمقاضاة ويؤثر على سيادة الدول في تطبيق قوانينها.</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">تعدد المجني عليهم:</p>
+                    <p class="card-list-item">القدرة على استهداف عدد كبير من الضحايا في وقت واحد (أفراد، مؤسسات، أو حتى دول) يزيد من حجم الضرر وتأثيره المجتمعي والاقتصادي.</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">صعوبة الإثبات:</p>
+                    <p class="card-list-item">الطبيعة التقنية لهذه الجرائم تجعل جمع الأدلة الرقمية وتأمينها تحدياً، مما قد يؤدي إلى إفلات بعض المجرمين من العقاب.</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">هادئة بطبيعتها ولكن خطورتها شديدة:</p>
+                    <p class="card-list-item">قد لا تتضمن عنفاً جسدياً مباشراً، لكن آثارها يمكن أن تكون مدمرة على المستوى المالي، النفسي، أو حتى الأمني. هذا "الهدوء" قد يخدع البعض عن إدراك حجم الخطر الحقيقي.</p>
+                </div>
+            </div>
+
+            <h3 class="text-blue-600">التأثيرات الاقتصادية:</h3>
+            <div class="card">
+                <p class="card-title">تسبب خسائر اقتصادية باهظة:</p>
+                <p class="card-list-item">سواء للأفراد (سرقة أموال، احتيال) أو للمؤسسات (تعطيل أعمال، سرقة بيانات، تكاليف استعادة الأنظمة) أو للدول (تكاليف مكافحة الجريمة، التأثير على الاستثمار).</p>
+            </div>
+            <div class="card">
+                <p class="card-title">التأثير على مؤسسات الدولة في اقتصادها:</p>
+                <p class="card-list-item">كما ذكر في أهمية دراسة الجرائم الحاسوبية، يمكن أن تستهدف البنى التحتية الاقتصادية أو الأنظمة المالية.</p>
+            </div>
+
+            <h3 class="text-blue-600">التأثيرات الاجتماعية والفردية:</h3>
+            <div class="card">
+                <p class="card-title">التأثير على فكر الإنسان وحياته:</p>
+                <p class="card-list-item">جرائم مثل الابتزاز الإلكتروني، التشهير، سرقة الهوية، والاستغلال الجنسي عبر الإنترنت لها آثار نفسية واجتماعية عميقة على الضحايا، وقد تدمر حياتهم وسمعتهم.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">انتشار الابتزاز والاحتيال والاستغلال الجنسي:</p>
+                <p class="card-list-item">اتساع استخدام الإنترنت ساهم في انتشار هذه الجرائم بشكل خاص، مما يعكس خطراً اجتماعياً متزايداً.</p>
+            </div>
+
+            <h3 class="text-blue-600">التأثيرات على الأمن القومي والسياسي:</h3>
+            <div class="card">
+                <p class="card-title">خطر على الأمن القومي والسياسي والاقتصادي:</p>
+                <p class="card-list-item">يمكن استخدام الجرائم الإلكترونية في التجسس، أو شن هجمات سيبرانية تستهدف مؤسسات الدولة الحيوية، أو نشر معلومات مضللة لزعزعة الاستقرار السياسي والاقتصادي.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">الدخول إلى مواقع إلكترونية للاطلاع على معلومات تمس الأمن الوطني:</p>
+                <p class="card-list-item">هذا الفعل مُجرّم بقانون الجرائم الإلكترونية (2018)، مما يعكس إدراك الدولة لخطورة هذا النوع من التهديدات.</p>
+            </div>
+
+            <h3 class="text-blue-600">التأثير على الثقة في البيئة الرقمية:</h3>
+            <div class="card">
+                <p class="card-list-item">انتشار الجرائم الإلكترونية يؤدي إلى تآكل الثقة في استخدام التكنولوجيا والإنترنت، مما قد يعيق التحول الرقمي والتطور التكنولوجي بشكل عام.</p>
+            </div>
+
+            <h3 class="text-blue-600">خلاصة خطورة وتأثير الجرائم الإلكترونية:</h3>
+            <div class="card">
+                <p class="card-list-item">الجرائم الإلكترونية تشكل تهديداً متعدد الأبعاد يتجاوز الخسائر المالية ليشمل الأفراد والمجتمع والدولة بأكملها. خطورتها تكمن في طبيعتها العابرة للحدود، صعوبة إثباتها، وتأثيراتها العميقة على الاقتصاد، الأمن، والحياة الاجتماعية للأفراد، مما يستدعي جهوداً تشريعية وتقنية ومجتمعية لمواجهتها.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: أهمية الإعلام ودوره في مكافحة التطرف -->
+        <section id="section3" class="content-section">
+            <h2 class="text-blue-700">ثالثاً: أهمية الإعلام ودوره في مكافحة التطرف</h2>
+            <p class="text-lg leading-relaxed">على الرغم من أن هذا الموضوع لا يفصل بشكل مباشر "أهمية ودور الإعلام في مكافحة التطرف" كنقطة مستقلة، إلا أنه يمكن استنتاج هذا الدور من خلال جهود الدولة الأردنية المذكورة في مكافحة التطرف والتي يرتبط الإعلام بها ارتباطاً وثيقاً:</p>
+
+            <h3 class="text-blue-600">الإعلام كأداة توعية وإرشاد (مرتبط بدور وزارة الأوقاف):</h3>
+            <div class="card">
+                <p class="card-list-item">يذكر أن من جهود الدولة "وزارة الأوقاف ودورها الوعظ". الإعلام، وخاصة الإعلام الديني المعتدل أو البرامج التوعوية، يلعب دوراً حاسماً في نشر رسائل الاعتدال والتسامح التي تقدمها وزارة الأوقاف وغيرها من المؤسسات الدينية. يمكن للإعلام أن يكون منصة لرجال الدين المعتدلين لتفنيد الأفكار المتطرفة وتقديم الفهم الصحيح للدين.</p>
+            </div>
+
+            <h3 class="text-blue-600">الإعلام كأداة لتعزيز المفاهيم الديمقراطية:</h3>
+            <div class="card">
+                <p class="card-list-item">من جهود الدولة "تعزيز المفاهيم الديمقراطية". الإعلام يمكن أن يساهم في نشر ثقافة الديمقراطية، قبول الآخر، الحوار، والمشاركة السياسية البناءة. هذه المفاهيم تتعارض بشكل مباشر مع الفكر المتطرف الذي غالباً ما يكون إقصائياً ويرفض التعددية. البرامج الحوارية، التحقيقات الصحفية، والمواد التثقيفية يمكن أن تلعب دوراً في ذلك.</p>
+            </div>
+
+            <h3 class="text-blue-600">الإعلام كداعم لمؤسسات مكافحة التطرف (مثل مركز السلم المجتمعي):</h3>
+            <div class="card">
+                <p class="card-list-item">تأسيس "مركز السلم المجتمعي" هو أحد جهود الدولة. الإعلام يمكنه تسليط الضوء على أنشطة هذا المركز وأهدافه، ونشر رسائله المتعلقة بتعزيز السلم الأهلي ونبذ التطرف. كما يمكن للإعلام أن يستضيف خبراء من هذا المركز لتقديم تحليلات ورؤى حول ظاهرة التطرف وكيفية مواجهتها.</p>
+            </div>
+
+            <h3 class="text-blue-600">الإعلام كأداة لمواجهة خطاب الكراهية (وهو مرتبط بالتطرف):</h3>
+            <div class="card">
+                <p class="card-list-item">يعرف "خطاب الكراهية" بأنه "كل قول أو فعل من شأنه إثارة الفتنة والنعرات...". الإعلام المسؤول يجب أن يتجنب بث أو ترويج خطاب الكراهية، بل وأن يعمل على فضحه ومواجهته من خلال التحليل النقدي وكشف مصادره وأهدافه. هذا يتطلب مهنية عالية وحساً وطنياً.</p>
+            </div>
+
+            <h3 class="text-blue-600">الإعلام كأداة لكشف الإشاعات (التي قد تغذي التطرف):</h3>
+            <div class="card">
+                <p class="card-list-item">الإشاعات يمكن أن تستغل لإثارة الفتن وتغذية الفكر المتطرف. دور الإعلام في التحقق من المعلومات، عدم تداول الإشاعات، وتوعية الجمهور بخطرها يساهم بشكل غير مباشر في مكافحة البيئة التي قد ينمو فيها التطرف.</p>
+            </div>
+
+            <h3 class="text-blue-600">خلاصة دور الإعلام في مكافحة التطرف:</h3>
+            <div class="card">
+                <p class="card-list-item">يلعب الإعلام دوراً حيوياً في مكافحة التطرف من خلال نشر الوعي الديني المعتدل، تعزيز القيم الديمقراطية والتسامح، دعم جهود المؤسسات المعنية بمكافحة التطرف، مواجهة خطاب الكراهية، وكشف الإشاعات. يتطلب ذلك إعلاماً واعياً ومسؤولاً وملتزماً بالقيم الوطنية.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: دور وأهمية مواقع التواصل الاجتماعي في الأمن الوطني والاجتماعي الأردني -->
+        <section id="section4" class="content-section">
+            <h2 class="text-blue-700">رابعاً: دور وأهمية مواقع التواصل الاجتماعي في الأمن الوطني والاجتماعي الأردني</h2>
+            <p class="text-lg leading-relaxed">تتناول مواقع التواصل الاجتماعي من منظور تأثيرها على الأمن الوطني والاجتماعي، مع التركيز على الجوانب السلبية والتحديات التي تطرحها، وكذلك الدعوة إلى استخدامها بشكل مسؤول:</p>
+
+            <h3 class="text-blue-600">مواقع التواصل الاجتماعي كمنصة لانتشار الظواهر السلبية:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Increased gap for more space -->
+                <div class="card">
+                    <p class="card-title">الإشاعة:</p>
+                    <p class="card-list-item">يذكر أن من أبرز الظواهر التي ساهمت مواقع التواصل الاجتماعي في انتشارها هي "الإشاعة". الإشاعات يمكن أن تهدد الأمن الاجتماعي من خلال بث معلومات خاطئة تثير القلق أو الفتنة أو تضر بسمعة الأفراد والمؤسسات. كما يمكن أن تمس الأمن الوطني إذا كانت تستهدف استقرار الدولة أو ثقة المواطنين بمؤسساتهم.</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">التنمر الاجتماعي (كما ورد في عنوان مقال جلالة الملك):</p>
+                    <p class="card-list-item">على الرغم من أن هذا الموضوع لم يفصل التنمر، إلا أن الإشارة إليه تعكس إدراكاً بأن هذه المنصات يمكن أن تكون بيئة للتنمر الذي له آثار سلبية على السلامة النفسية والاجتماعية للأفراد.</p>
+                </div>
+            </div>
+
+            <h3 class="text-blue-600">مواقع التواصل الاجتماعي كأداة محتملة لخطاب الكراهية:</h3>
+            <div class="card">
+                <p class="card-list-item">على الرغم من أن هذا الموضوع لا يربط بشكل مباشر خطاب الكراهية بمواقع التواصل في هذا الجزء، إلا أن طبيعة هذه المنصات وسهولة النشر عليها تجعلها عرضة لاستخدامها في بث خطاب الكراهية الذي يهدد التماسك الاجتماعي والوحدة الوطنية.</p>
+            </div>
+
+            <h3 class="text-blue-600">التحديات الأمنية والاجتماعية التي تفرضها مواقع التواصل:</h3>
+            <div class="card">
+                <p class="card-list-item">نشر معلومات غير دقيقة أو مضللة: هذا يتطلب من المواطنين والمؤسسات التعامل بحذر مع ما يتم تداوله.</p>
+            </div>
+            <div class="card">
+                <p class="card-list-item">صعوبة السيطرة على المحتوى: الطبيعة المفتوحة لهذه المنصات تجعل التحكم الكامل في المحتوى المتداول أمراً صعباً.</p>
+            </div>
+            <div class="card">
+                <p class="card-list-item">إمكانية استغلالها من قبل جهات معادية أو متطرفة: لنشر أفكارها أو تجنيد الأفراد أو زعزعة الاستقرار.</p>
+            </div>
+
+            <h3 class="text-blue-600">الدعوة إلى الاستخدام المسؤول والواعي لمواقع التواصل (من خلال مقال جلالة الملك):</h3>
+            <div class="card">
+                <p class="card-title">ضرورة أن توفر الحكومة المعلومات الدقيقة للوطن:</p>
+                <p class="card-list-item">لمواجهة الإشاعات والمعلومات المضللة التي قد تنتشر عبر هذه المنصات، مما يعزز الثقة والأمن المعلوماتي.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">تطوير التشريعات بما يتضمن صون وحماية حرية التعبير (مع ضبط الاستخدام السلبي):</p>
+                <p class="card-list-item">الحاجة إلى إطار قانوني ينظم استخدام هذه المنصات، بحيث يحمي حرية التعبير المسؤولة ويجرم الاستخدامات الضارة كبث الكراهية أو الإشاعات التي تهدد الأمن.</p>
+            </div>
+            <div class="card">
+                <p class="card-title">القضاء على الإشاعة ومنع خطاب الكراهية:</p>
+                <p class="card-list-item">التأكيد على أن هذه مسؤولية مشتركة تتطلب جهوداً من الحكومة والمجتمع ومستخدمي هذه المنصات.</p>
+            </div>
+
+            <h3 class="text-blue-600">أهمية الوعي المجتمعي في التعامل مع مواقع التواصل:</h3>
+            <div class="card">
+                <p class="card-list-item">يشير إلى أن التعامل مع خطر الإشاعة يتطلب عدم تصديقها والتثبت منها، وعدم تداولها، وتكاتف المجتمع لمواجهتها. هذا الوعي ضروري للحفاظ على الأمن الاجتماعي والوطني في ظل التأثير الكبير لهذه المنصات.</p>
+            </div>
+
+            <h3 class="text-blue-600">خلاصة دور وأهمية مواقع التواصل الاجتماعي في الأمن الوطني والاجتماعي:</h3>
+            <div class="card">
+                <p class="card-list-item">مواقع التواصل الاجتماعي سلاح ذو حدين. يمكن أن تكون أداة لنشر الوعي والمعرفة والتواصل الإيجابي، ولكنها في الوقت ذاته تشكل تحدياً للأمن الوطني والاجتماعي إذا استُخدمت بشكل سلبي لنشر الإشاعات، خطاب الكراهية، أو التنمر. الأهمية تكمن في ضرورة الاستخدام المسؤول والواعي لهذه المنصات، وتطوير التشريعات المناسبة، وتعزيز دور الحكومة في توفير المعلومات الدقيقة، وتكاتف المجتمع لمواجهة المخاطر الناجمة عنها.</p>
+            </div>
+        </section>
+        
+        <!-- Footer for Copyright -->
+        <footer class="footer">
+            <p>جميع الحقوق محفوظة &copy; 2025 قيس الجازي</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            // Function to show a specific section and hide others
+            const showSection = (sectionId) => {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    // Reset animation for hidden sections
+                    section.style.animation = 'none';
+                    section.offsetHeight; /* Trigger reflow */
+                    section.style.animation = null;
+                });
+                const activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                    // Apply animation to active section
+                    activeSection.style.animation = 'fadeInFromBottom 0.6s ease-out forwards';
+                    // Scroll to the top of the container after showing the section
+                    document.querySelector('.container').scrollTop = 0;
+                }
+
+                // Update active class on nav links
+                navLinks.forEach(link => {
+                    if (link.dataset.section === sectionId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            };
+
+            // Add click event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default anchor link behavior
+                    const sectionId = event.target.dataset.section;
+                    showSection(sectionId);
+                    // Update URL hash without jumping
+                    history.pushState(null, '', `#${sectionId}`);
+                });
+            });
+
+            // Show the first section by default on load or based on URL hash
+            const initialSection = window.location.hash ? window.location.hash.substring(1) : 'section1';
+            showSection(initialSection);
+
+            // Listen for hash changes (e.g., if user navigates with browser back/forward)
+            window.addEventListener('hashchange', () => {
+                const newSection = window.location.hash ? window.location.hash.substring(1) : 'section1';
+                showSection(newSection);
+            });
+        });
+    </script>
+</body>
+</html>

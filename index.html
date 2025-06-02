@@ -3,662 +3,981 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المحور السابع: الإعلام والأمن الوطني</title>
-    <!-- Tailwind CSS CDN -->
+    <title>امتحان المحور السابع: الإعلام والأمن الوطني</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Noto Sans Arabic for better Arabic rendering -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         body {
             font-family: 'Noto Sans Arabic', sans-serif;
-            background: linear-gradient(135deg, #F7FDFD, #FDFBF7); /* Soft blue-grey gradient */
-            color: #34495E; /* Dark slate blue for main text */
-            line-height: 1.7; /* Comfortable line height */
-            scroll-behavior: smooth;
-            padding-top: 100px; /* Space for fixed navigation */
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            background: linear-gradient(135deg, #1A2B3C, #0F1A25); /* Deep, rich dark blue gradient */
+            color: #E0E7F0; /* Light grey-blue for main text */
+            line-height: 1.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            overflow-x: hidden;
         }
 
-        /* Main Container */
-        .container {
-            max-width: 1100px; /* Slightly wider container */
-            margin: 2rem auto;
-            padding: 3rem; /* More internal padding */
-            background-color: #FFFFFF; /* Clean white background */
-            border-radius: 2.5rem; /* Even more rounded corners */
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18); /* Deeper, softer shadow */
-            border: 1px solid #EAF0F6; /* Very subtle border */
-            animation: fadeInSlideUp 0.9s ease-out forwards; /* Initial container animation */
+        /* Exam Container */
+        .exam-container {
+            max-width: 1000px; /* Even wider container */
+            width: 100%;
+            background-color: #FFFFFF;
+            border-radius: 3rem; /* Very rounded corners */
+            box-shadow: 0 40px 90px rgba(0, 0, 0, 0.35); /* More prominent, soft shadow */
+            border: 2px solid #2C3E50; /* Darker, more defined border */
+            padding: 4rem; /* Even more generous padding */
+            animation: fadeInScaleUp 1s ease-out forwards; /* Initial container animation */
+            position: relative;
+            overflow: hidden;
+            background-image: radial-gradient(circle at top left, rgba(255,255,255,0.05) 0%, transparent 50%),
+                              radial-gradient(circle at bottom right, rgba(255,255,255,0.05) 0%, transparent 50%); /* Subtle internal gradients */
         }
 
-        @keyframes fadeInSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Decorative background elements (more subtle and integrated) */
+        .exam-container::before,
+        .exam-container::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.08; /* Very subtle */
+            filter: blur(80px); /* More blur */
+            z-index: 0;
+        }
+        .exam-container::before {
+            width: 250px;
+            height: 250px;
+            background-color: #9B59B6; /* Deep purple */
+            top: -80px;
+            left: -80px;
+        }
+        .exam-container::after {
+            width: 300px;
+            height: 300px;
+            background-color: #3498DB; /* Bright blue */
+            bottom: -100px;
+            right: -100px;
+        }
+
+        @keyframes fadeInScaleUp {
+            from { opacity: 0; transform: scale(0.85); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         /* Headings */
         h1, h2, h3 {
             font-family: 'Noto Sans Arabic', sans-serif;
-            font-weight: 900; /* Extra bold for impact */
-            color: #2C3E50; /* Darker slate blue for headings */
-            margin-bottom: 1.8rem; /* More space below headings */
-            text-shadow: 0 3px 10px rgba(44, 62, 80, 0.15); /* Soft, subtle text shadow */
-        }
-
-        /* Main Title (H1) */
-        .main-title-wrapper {
-            position: relative;
-            padding-bottom: 2.5rem; /* Space for decorative elements */
-            margin-bottom: 3rem; /* More space below title block */
+            font-weight: 900;
+            color: #1A2B3C; /* Dark blue-grey for headings */
             text-align: center;
-        }
-        .main-title-wrapper::before,
-        .main-title-wrapper::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70%; /* Wider decorative lines */
-            height: 3px; /* Thicker lines */
-            background: linear-gradient(to right, transparent, #4CAF50, transparent); /* Green gradient line */
-            border-radius: 2px;
-        }
-        .main-title-wrapper::before {
-            top: -1.5rem; /* Position further above */
-        }
-        .main-title-wrapper::after {
-            bottom: 0; /* Position at the bottom */
+            margin-bottom: 2rem;
+            text-shadow: 0 5px 20px rgba(26, 43, 60, 0.2); /* Stronger, softer shadow */
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
-            font-size: 4.5rem; /* Even larger main title */
-            letter-spacing: 0.12em; /* More distinct letter spacing */
-            color: #2C3E50; /* Primary dark blue for main title */
-            text-shadow: 0 6px 20px rgba(44, 62, 80, 0.25); /* Stronger, more vibrant shadow */
-            /* Removed initial opacity and animation-delay to ensure visibility */
-            animation: bounceIn 1s ease-out forwards; /* Animation still applies */
-            position: relative;
-            z-index: 2;
+            font-size: 5rem; /* Massive, impactful title */
+            letter-spacing: 0.18em; /* Even more distinct letter spacing */
+            color: #34495E; /* Dark slate blue for main title */
+            background: linear-gradient(45deg, #34495E, #2C3E50); /* Subtle gradient for title text */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s infinite alternate, slideInFromTop 1s ease-out forwards;
+            opacity: 0; /* Still starts hidden for animation */
+            text-shadow: 0 0 15px rgba(52, 73, 94, 0.5); /* Soft glow */
         }
-        @keyframes bounceIn {
-            0% { transform: scale(0.3); }
-            50% { transform: scale(1.05); }
-            70% { transform: scale(0.9); }
-            100% { transform: scale(1); }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(52, 73, 94, 0.5); }
+            to { text-shadow: 0 0 20px rgba(52, 73, 94, 0.8); }
+        }
+        @keyframes slideInFromTop {
+            from { opacity: 0; transform: translateY(-80px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .subtitle {
-            font-size: 2.2rem; /* Larger, clearer subtitle */
-            color: #5D6D7E; /* Darker grey for subtitle for better contrast */
-            /* Removed initial opacity and animation-delay to ensure visibility */
-            animation: fadeIn 1.2s ease-out forwards; /* Animation still applies */
+        .student-info {
+            font-size: 1.8rem; /* Larger, more elegant student info */
+            color: #7F8C8D; /* Medium grey */
             text-align: center;
-            margin-top: 0.5rem; /* Closer to main title */
+            margin-bottom: 4rem;
+            animation: fadeIn 1.5s ease-out forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+            position: relative;
+            z-index: 1;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        /* Section Title (H2) */
-        h2 {
-            font-size: 3.5rem; /* Larger section titles */
-            border-bottom: none; /* Remove default border-bottom */
-            padding-bottom: 0;
-            margin-top: 5rem; /* More space above sections */
-            position: relative;
-            display: block; /* Full width block */
-            padding-right: 0;
-            animation: slideInLeft 0.8s ease-out forwards; /* Entry animation for sections */
-            opacity: 0;
-            text-align: right; /* Align right for RTL */
-            padding-left: 20px; /* Space for decorative line */
-        }
-        h2::before {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 10px; /* Thicker vertical line */
-            height: 100%; /* Full height */
-            background-color: #4CAF50; /* Vibrant green line */
-            border-radius: 5px;
-            animation: expandLine 1s ease-out forwards;
-            animation-delay: 0.3s;
-        }
-        h2::after {
-            content: '—'; /* Decorative dash */
-            position: absolute;
-            right: 20px; /* Adjust position */
-            top: 50%;
-            transform: translateY(-50%);
-            color: #4CAF50;
-            font-size: 1.5em;
-            font-weight: 900;
-        }
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes expandLine {
-            from { height: 0; }
-            to { height: 100%; }
-        }
-
-        /* Sub-Section Title (H3) */
-        h3 {
-            font-size: 2.5rem; /* Larger sub-section titles */
-            color: #34495E; /* Slightly darker slate blue */
-            margin-top: 3.5rem;
-            margin-bottom: 1.5rem;
-            padding-right: 1.5rem; /* More indent */
-            border-right: 6px solid #66BB6A; /* Thicker accent border (lighter green) */
-            position: relative;
-            animation: fadeInRight 0.7s ease-out forwards;
-            opacity: 0;
-            border-radius: 0.5rem; /* Slightly rounded border */
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-        h3::before {
-            content: '◆'; /* Diamond bullet */
-            position: absolute;
-            right: -20px; /* Further out */
-            top: 50%;
-            transform: translateY(-50%);
-            color: #66BB6A; /* Lighter green bullet */
-            font-size: 1.4em; /* Larger bullet */
-        }
-
-        /* Paragraphs and Lists */
-        p {
-            margin-bottom: 1.8rem; /* More spacing */
-            color: #4A6572; /* Softer grey for body text */
-            font-size: 1.15rem; /* Slightly larger body text */
-        }
-        ul {
-            list-style-type: none; /* Remove default list style */
-            margin-right: 0;
-            margin-bottom: 1.8rem;
-            padding-right: 0;
-        }
-        li {
-            margin-bottom: 1rem; /* More space between list items */
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 120px; /* Adjust padding for smaller nav */
-            }
-            .container {
-                margin: 1rem;
-                padding: 1.5rem;
-                border-radius: 1rem;
-            }
-            h1 {
-                font-size: 3.5rem;
-                letter-spacing: 0.05em;
-            }
-            .subtitle {
-                font-size: 1.8rem;
-            }
-            h2 {
-                font-size: 2.8rem;
-                margin-top: 3rem;
-            }
-            h3 {
-                font-size: 2rem;
-                margin-top: 2.5rem;
-            }
-            .nav-menu {
-                flex-direction: column;
-                padding: 0.75rem 0;
-                gap: 0.5rem;
-            }
-            .nav-menu a {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.9rem;
-            }
-            .grid-cols-1.md\:grid-cols-2 {
-                grid-template-columns: 1fr;
-            }
-            .main-title-wrapper::before,
-            .main-title-wrapper::after {
-                width: 90%;
-            }
-        }
-
-        /* Navigation Menu */
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.98);
-            padding: 1.2rem 0; /* More vertical padding */
-            border-bottom: 1px solid #EAF0F6;
-            display: flex;
-            justify-content: center;
-            gap: 2rem; /* More space between nav items */
-            width: 100%;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Softer shadow */
-            border-radius: 0;
-        }
-        .nav-menu a {
-            color: #4CAF50; /* Vibrant green for nav links */
-            text-decoration: none;
-            font-weight: 700;
-            padding: 0.8rem 1.5rem; /* Larger clickable area */
-            border-radius: 0.75rem;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden; /* For ripple effect */
-        }
-        .nav-menu a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%);
-            transform: translateX(-100%);
-            transition: transform 0.4s ease;
-        }
-        .nav-menu a:hover::before {
-            transform: translateX(100%);
-        }
-        .nav-menu a:hover {
-            background-color: #4CAF50;
-            color: #FFFFFF;
-            transform: translateY(-3px); /* More pronounced lift */
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4); /* Green shadow on hover */
-        }
-        .nav-menu a.active {
-            background-color: #388E3C; /* Darker green for active link */
-            color: #FFFFFF;
-            box-shadow: 0 5px 15px rgba(56, 142, 60, 0.5); /* Stronger green shadow for active */
-            transform: translateY(-1px); /* Slight lift for active */
-        }
-
-        /* Section Content Display (SPA logic) */
-        .content-section {
+        /* Screens (Start, Exam, Results) */
+        .start-screen, .exam-screen, .results-screen {
             display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out; /* Slower, smoother transition */
-            padding-top: 2.5rem; /* Ensure padding for scroll target */
-            border-top: 1px dashed #D1D5DB; /* Subtle dashed border for separation */
+            animation: fadeInContent 0.8s ease-out forwards;
         }
-        .content-section:first-of-type {
-            border-top: none; /* No border for the very first section */
-        }
-        .content-section.active {
+        .start-screen.active, .exam-screen.active, .results-screen.active {
             display: block;
-            opacity: 1;
-            transform: translateY(0);
+        }
+        @keyframes fadeInContent {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Card Styling */
-        .card {
-            background-color: #FFFFFF; /* Pure white for card background */
-            border-radius: 1.5rem; /* More rounded */
-            padding: 2rem 2.8rem; /* More generous padding */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Softer, more diffuse shadow */
-            margin-bottom: 2.5rem; /* More space between cards */
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border: 1px solid #E0E7ED; /* Subtle border for definition */
-            position: relative; /* For decorative elements inside card */
-            overflow: hidden; /* Clip any overflow */
+        /* Question Card */
+        .question-card {
+            background-color: #FDFDFD; /* Near white for card */
+            border-radius: 2rem; /* More rounded */
+            padding: 3rem; /* Very generous padding */
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15); /* Stronger, softer shadow */
+            border: 2px solid #EAEFF5; /* Subtle, elegant border */
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(245,245,245,0.9) 100%); /* Slight internal gradient for depth */
         }
-        .card::before {
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #9B59B6, #3498DB); /* Purple to blue header line */
+            border-radius: 2rem 2rem 0 0;
+        }
+        .question-number {
+            position: absolute;
+            top: 1rem; /* Adjusted position */
+            right: 1rem; /* Adjusted position */
+            background: linear-gradient(45deg, #6C5CE7, #8A2BE2); /* Purple gradient */
+            color: white;
+            padding: 0.4rem 0.8rem; /* Smaller padding */
+            border-radius: 0.75rem; /* Slightly less rounded */
+            font-weight: 700;
+            font-size: 1rem; /* Smaller font size */
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4);
+            animation: bounceIn 0.8s ease-out forwards;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        .question-text {
+            font-size: 2rem; /* Even larger question text */
+            font-weight: 700;
+            color: #2D3748;
+            margin-bottom: 2.5rem;
+            padding-right: 7rem; /* Adjusted space for question number */
+            padding-left: 1rem;
+            line-height: 1.7;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Very subtle text shadow */
+        }
+
+        /* Options Grid */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem; /* More space between options */
+        }
+        .option-button {
+            background-color: #F5F7FA; /* Lighter grey-blue for options */
+            color: #4A5568;
+            padding: 1.5rem 2rem; /* Even larger padding */
+            border-radius: 1.2rem; /* More rounded */
+            text-align: right;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease;
+            font-size: 1.3rem; /* Larger font */
+            font-weight: 500;
+            border: 2px solid #DCE3EB; /* More visible border */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05); /* Subtle initial shadow */
+        }
+        .option-button::before {
             content: '';
             position: absolute;
             top: 0;
             right: 0;
-            width: 12px; /* Thicker accent */
+            width: 8px; /* Thin accent line */
             height: 100%;
-            background-color: #A5D6A7; /* Light green accent on the side */
-            border-radius: 0 1.5rem 1.5rem 0; /* Rounded only on the right */
+            background: linear-gradient(180deg, #9B59B6, #3498DB); /* Purple to blue gradient accent */
+            border-radius: 0 1.2rem 1.2rem 0;
             transition: width 0.3s ease;
         }
-        .card:hover::before {
-            width: 18px; /* Expand accent on hover */
+        .option-button:hover:not(:disabled)::before {
+            width: 12px; /* Expand accent on hover */
         }
-        .card:hover {
-            transform: translateY(-10px); /* More pronounced lift on hover */
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        .option-button:hover:not(:disabled) {
+            background-color: #EBF0F5;
+            transform: translateY(-5px); /* More pronounced lift */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
         }
-        .card-title {
-            font-weight: 800;
-            color: #1A5276; /* Deep blue for card titles */
-            margin-bottom: 1rem;
-            font-size: 1.35rem; /* Larger card titles */
-            position: relative;
-            padding-right: 20px; /* Space for icon */
+        .option-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.9;
         }
-        .card-title::before {
-            content: '✨'; /* Sparkle emoji */
-            position: absolute;
-            right: -10px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.1em;
-            color: #4CAF50; /* Green sparkle */
+        .option-button.selected {
+            background: linear-gradient(45deg, #8A2BE2, #6C5CE7); /* Deep purple gradient for selected */
+            color: white;
+            border-color: #483D8B;
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+            font-weight: 600;
         }
-        .card-list-item {
-            color: #5D6D7E; /* Medium grey for card text */
-            font-size: 1.15rem; /* Larger card text */
+        .option-button.correct {
+            background: linear-gradient(45deg, #2ECC71, #27AE60); /* Emerald green gradient for correct */
+            color: white;
+            border-color: #229954;
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.5);
+        }
+        .option-button.incorrect {
+            background: linear-gradient(45deg, #E74C3C, #C0392B); /* Alizarin red gradient for incorrect */
+            color: white;
+            border-color: #A93226;
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
         }
 
-        /* Footer Styling */
-        .footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #E0E7ED;
+        /* Feedback Message */
+        .feedback-message {
             text-align: center;
-            font-size: 0.95rem;
-            color: #7F8C8D; /* Soft grey for footer text */
+            margin-top: 2.5rem;
+            font-size: 1.6rem; /* Even larger feedback message */
+            font-weight: 800;
+            padding: 1.2rem 1.8rem;
+            border-radius: 1.2rem;
+            display: none;
+            animation: slideInUp 0.6s ease-out forwards;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .feedback-message.correct {
+            background-color: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+        .feedback-message.incorrect {
+            background-color: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            gap: 2rem; /* More space between buttons */
+        }
+        .nav-button {
+            background: linear-gradient(45deg, #3498DB, #2980B9); /* Blue gradient */
+            color: white;
+            padding: 1.2rem 3rem; /* Larger, more prominent buttons */
+            border-radius: 1.2rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+            flex-grow: 1; /* Allow buttons to grow */
+            text-align: center;
+        }
+        .nav-button:hover:not(:disabled) {
+            background: linear-gradient(45deg, #2980B9, #21618C);
+            transform: translateY(-6px); /* More pronounced lift */
+            box-shadow: 0 10px 30px rgba(52, 152, 219, 0.5);
+        }
+        .nav-button:disabled {
+            background-color: #BDC3C7; /* Lighter grey for disabled */
+            color: #7F8C8D;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+        .submit-button {
+            background: linear-gradient(45deg, #2ECC71, #27AE60); /* Green gradient for submit */
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        }
+        .submit-button:hover:not(:disabled) {
+            background: linear-gradient(45deg, #27AE60, #229954);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.5);
+        }
+
+        /* Results Screen */
+        .results-summary {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .results-summary h2 {
+            font-size: 3.8rem; /* Larger results title */
+            color: #1A2B3C;
+            margin-bottom: 2rem;
+            text-shadow: 0 5px 20px rgba(26, 43, 60, 0.25);
+        }
+        .score-display {
+            font-size: 5.5rem; /* Huge, celebratory score display */
+            font-weight: 900;
+            color: #2ECC71; /* Vibrant green for score */
+            margin-bottom: 2.5rem;
+            text-shadow: 0 0 30px rgba(46, 204, 113, 0.8);
+            animation: pulseGlow 2s infinite alternate; /* More intense pulsing glow */
+        }
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 1; text-shadow: 0 0 20px rgba(46, 204, 113, 0.8); }
+            50% { transform: scale(1.08); opacity: 0.9; text-shadow: 0 0 40px rgba(46, 204, 113, 1); }
+            100% { transform: scale(1); opacity: 1; text-shadow: 0 0 20px rgba(46, 204, 113, 0.8); }
+        }
+        .review-button {
+            background: linear-gradient(45deg, #9B59B6, #8E44AD); /* Deep purple gradient for review */
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 1.2rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+            margin-top: 3rem;
+        }
+        .review-button:hover {
+            background: linear-gradient(45deg, #8E44AD, #7D3C98);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.5);
+        }
+
+        .question-review-list {
+            margin-top: 4rem;
+            max-height: 600px; /* Even taller review list */
+            overflow-y: auto;
+            border: 2px solid #EAEFF5;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            background-color: #F8F9FA;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.08); /* More pronounced inset shadow */
+        }
+        .review-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px dashed #DCE3EB; /* Softer dashed line */
+        }
+        .review-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .review-question-text {
+            font-weight: 700;
+            color: #2D3748;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
+        }
+        .review-answer-text {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            padding-right: 1.8rem;
+            position: relative;
+            color: #4A5568;
+        }
+        .review-answer-text::before {
+            content: '•';
+            position: absolute;
+            right: 0;
+            color: #BDC3C7; /* Softer bullet color */
+            font-size: 1.3em;
+        }
+        .review-answer-text.correct-answer {
+            color: #27AE60; /* Dark green */
+            font-weight: 600;
+        }
+        .review-answer-text.user-selected-incorrect {
+            color: #C0392B; /* Dark red */
+            font-weight: 600;
+        }
+        .review-answer-text.not-selected {
+            color: #7F8C8D; /* Medium grey */
+            font-style: italic;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .exam-container {
+                padding: 1.5rem;
+                border-radius: 1.5rem;
+            }
+            h1 {
+                font-size: 3rem;
+                letter-spacing: 0.08em;
+            }
+            .student-info {
+                font-size: 1.3rem;
+            }
+            .question-text {
+                font-size: 1.4rem;
+                padding-right: 6rem;
+            }
+            .question-number {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+                top: 1rem;
+                right: 1rem;
+            }
+            .option-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.2rem;
+                border-radius: 0.75rem;
+            }
+            .feedback-message {
+                font-size: 1.1rem;
+                padding: 0.6rem;
+            }
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-button {
+                width: 100%;
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+            .score-display {
+                font-size: 3.5rem;
+            }
+            .review-button {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
+            .question-review-list {
+                padding: 1rem;
+            }
+            .review-question-text {
+                font-size: 1.1rem;
+            }
+            .review-answer-text {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
-<body class="p-4">
-    <!-- Navigation Menu - Fixed at top -->
-    <div class="nav-menu">
-        <a href="#section1" class="nav-link" data-section="section1">الإعلام ودوره الوطني</a>
-        <a href="#section2" class="nav-link" data-section="section2">الجرائم الإلكترونية</a>
-        <a href="#section3" class="nav-link" data-section="section3">الإعلام ومكافحة التطرف</a>
-        <a href="#section4" class="nav-link" data-section="section4">التواصل الاجتماعي والأمن</a>
-    </div>
-
-    <div class="container">
-        <!-- Main Title and Subtitle -->
-        <div class="main-title-wrapper">
-            <h1 class="text-center" style="opacity: 1; animation: none;">المحور السابع: الإعلام والأمن الوطني</h1>
-            <p class="subtitle text-center" style="opacity: 1; animation: none; color: #4A6572;">إعداد وتقديم الطالب: قيس طلال غالب الجازي</p>
+<body>
+    <div class="exam-container">
+        <div id="start-screen" class="start-screen active">
+            <h1>امتحان المحور السابع: الإعلام والأمن الوطني</h1>
+            <p class="student-info">إعداد وتقديم الطالب: قيس طلال غالب الجازي</p>
+            <p class="text-center text-xl text-gray-700 mb-10 leading-relaxed">
+                أهلاً بك في امتحان المحور السابع. يتكون هذا الامتحان من 50 سؤالاً من نوع الاختيار من متعدد.
+                يرجى قراءة الأسئلة والخيارات بعناية قبل اختيار الإجابة الصحيحة.
+                ستتلقى تغذية راجعة فورية بعد كل إجابة.
+            </p>
+            <div class="flex justify-center">
+                <button id="start-exam-btn" class="nav-button">ابدأ الامتحان</button>
+            </div>
         </div>
 
-        <!-- Section 1: الإعلام ودوره الوطني -->
-        <section id="section1" class="content-section active">
-            <h2 class="text-blue-700">أولاً: الإعلام ودوره الوطني</h2>
-            <p class="text-lg leading-relaxed">الإعلام ليس مجرد ناقل للأخبار، بل هو مؤسسة وطنية رئيسية تلعب دوراً محورياً في بناء التربية الوطنية للمجتمع. هذا الدور يتجلى من خلال عدة جوانب:</p>
-
-            <h3 class="text-blue-600">المؤسسات الإعلامية كأدوات وطنية:</h3>
-            <div class="card">
-                <p class="card-list-item">يحدد مؤسسات مثل مؤسسة الإذاعة والتلفزيون، وكالة الأنباء الأردنية (بترا)، مركز المعلومات الوطني، ووزارة الإعلام كأطراف رئيسية في نقل الصورة الإعلامية. هذه المؤسسات، بحكم طبيعتها الرسمية أو شبه الرسمية، يُتوقع منها أن تخدم الأهداف الوطنية.</p>
+        <div id="exam-screen" class="exam-screen">
+            <div class="question-card">
+                <div id="question-number" class="question-number"></div>
+                <p id="question-text" class="question-text"></p>
+                <div id="options-grid" class="options-grid">
+                    </div>
+                <div id="feedback-message" class="feedback-message"></div>
             </div>
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="nav-button">السابق</button>
+                <button id="next-btn" class="nav-button">التالي</button>
+                <button id="submit-btn" class="nav-button submit-button hidden">إنهاء الامتحان</button>
+            </div>
+        </div>
 
-            <h3 class="text-blue-600">الوظائف التربوية والوطنية للإعلام:</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Increased gap for more space -->
-                <div class="card">
-                    <p class="card-title">نقل الأخبار المختلفة:</p>
-                    <p class="card-list-item">إبقاء المواطن على اطلاع بما يجري، وهو جزء أساسي من المواطنة الفاعلة.</p>
+        <div id="results-screen" class="results-screen">
+            <div class="results-summary">
+                <h2>نتيجتك النهائية</h2>
+                <p id="score-display" class="score-display"></p>
+                <p class="text-xl text-gray-700">لقد أكملت الامتحان بنجاح! أحسنت.</p>
+                <button id="review-exam-btn" class="review-button">مراجعة الإجابات</button>
+            </div>
+            <div id="question-review-list" class="question-review-list hidden">
                 </div>
-                <div class="card">
-                    <p class="card-title">التعبير عن الاتجاهات المختلفة في المجتمع:</p>
-                    <p class="card-list-item">من خلال توفير منصة للآراء المتنوعة، يساهم الإعلام في تعزيز الحوار الوطني وفهم وجهات النظر المختلفة، وهو أمر ضروري للتماسك الوطني.</p>
-                </div>
-                <div class="card">
-                    <p class="card-title">توجيه المنظومة القيمية للمجتمع:</p>
-                    <p class="card-list-item">الإعلام له القدرة على التأثير في القيم السائدة، وبالتالي يمكنه المساهمة في تطوير الذات الوطنية والحفاظ على شخصية المجتمع وهويته من خلال التركيز على القيم الإيجابية التي تدعم الانتماء والوحدة.</p>
-                </div>
-                <div class="card">
-                    <p class="card-title">الرد على الدعاية المضادة:</p>
-                    <p class="card-list-item">في عالم تتعدد فيه مصادر المعلومات والتأثيرات الخارجية، يلعب الإعلام دوراً دفاعياً في مواجهة الحملات التي قد تستهدف النيل من "عزة الآخرين" (المقصود هنا قد يكون الوطن أو رموزه أو قيمه). هذا يعني حماية الأمن الفكري والمعنوي للمجتمع.</p>
-                </div>
-            </div>
-
-            <h3 class="text-blue-600">شروط فعالية الدور الوطني للإعلام:</h3>
-            <div class="card">
-                <p class="card-list-item">لكي يتمكن الإعلام من أداء دوره الوطني بفعالية، يجب أن يستند إلى الحوار، الإبداع، تحقيق مفهوم حرية الرأي (المسؤولة)، والحاجة إلى رؤى واستراتيجيات ملائمة للعصر، بالإضافة إلى التسارع في نقل المعلومات واحترام الرأي والرأي الآخر. هذه العوامل تضمن إعلاماً قوياً ومؤثراً وقادراً على مخاطبة الجمهور والتأثير فيه إيجاباً.</p>
-            </div>
-
-            <h3 class="text-blue-600">تطور الدور الوطني للإعلام في عهد الملك عبد الله الثاني:</h3>
-            <div class="card">
-                <p class="card-list-item">هذا العهد شهد رفع مستوى الحرية الصحفية، والدعوة لإعلام وطني ومسؤول، والدعوة المستثمرة لإعلام فاعل يعبر عن مصالح الأردن والأردنيين. هذا يعكس فهماً لأهمية الإعلام الحر والمسؤول كأداة للتنمية الوطنية والتعبير عن الهوية.</p>
-            </div>
-
-            <h3 class="text-blue-600">تحديات تواجه الدور الوطني للإعلام:</h3>
-            <div class="card">
-                <p class="card-list-item">قضايا مثل نيل الثقة بين الجمهور والمؤسسات الإعلامية، وضرورة احترام آراء المواطنين، وإشراكهم في توجيه الرسالة الإعلامية، بالإضافة إلى المنافسة مع وسائل الإعلام الأخرى، كلها تحديات تؤثر على قدرة الإعلام على أداء دوره الوطني بفعالية.</p>
-            </div>
-
-            <h3 class="text-blue-600">خلاصة دور الإعلام الوطني:</h3>
-            <div class="card">
-                <p class="card-list-item">الإعلام هو أداة حيوية للتنشئة الوطنية، يعمل على إعلام المواطنين، تشكيل قيمهم، تعزيز هويتهم، والدفاع عن مصالح الوطن، ولكي يكون فعالاً، يجب أن يكون حراً ومسؤولاً ومتطوراً وقادراً على كسب ثقة الجمهور.</p>
-            </div>
-        </section>
-
-        <!-- Section 2: الجرائم الإلكترونية: خطورتها وتأثيرها -->
-        <section id="section2" class="content-section">
-            <h2 class="text-blue-700">ثانياً: الجرائم الإلكترونية: خطورتها وتأثيرها</h2>
-            <p class="text-lg leading-relaxed">يُبرز خطورة الجرائم الإلكترونية وتأثيراتها المتعددة من خلال النقاط التالية:</p>
-
-            <h3 class="text-blue-600">الطبيعة والخصائص الخطيرة للجرائم الإلكترونية:</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Increased gap for more space -->
-                <div class="card">
-                    <p class="card-title">عابرة للحدود:</p>
-                    <p class="card-list-item">خطورتها تكمن في صعوبة ملاحقة مرتكبيها الذين قد يكونون في دول أخرى، مما يعقد إجراءات التحقيق والمقاضاة ويؤثر على سيادة الدول في تطبيق قوانينها.</p>
-                </div>
-                <div class="card">
-                    <p class="card-title">تعدد المجني عليهم:</p>
-                    <p class="card-list-item">القدرة على استهداف عدد كبير من الضحايا في وقت واحد (أفراد، مؤسسات، أو حتى دول) يزيد من حجم الضرر وتأثيره المجتمعي والاقتصادي.</p>
-                </div>
-                <div class="card">
-                    <p class="card-title">صعوبة الإثبات:</p>
-                    <p class="card-list-item">الطبيعة التقنية لهذه الجرائم تجعل جمع الأدلة الرقمية وتأمينها تحدياً، مما قد يؤدي إلى إفلات بعض المجرمين من العقاب.</p>
-                </div>
-                <div class="card">
-                    <p class="card-title">هادئة بطبيعتها ولكن خطورتها شديدة:</p>
-                    <p class="card-list-item">قد لا تتضمن عنفاً جسدياً مباشراً، لكن آثارها يمكن أن تكون مدمرة على المستوى المالي، النفسي، أو حتى الأمني. هذا "الهدوء" قد يخدع البعض عن إدراك حجم الخطر الحقيقي.</p>
-                </div>
-            </div>
-
-            <h3 class="text-blue-600">التأثيرات الاقتصادية:</h3>
-            <div class="card">
-                <p class="card-title">تسبب خسائر اقتصادية باهظة:</p>
-                <p class="card-list-item">سواء للأفراد (سرقة أموال، احتيال) أو للمؤسسات (تعطيل أعمال، سرقة بيانات، تكاليف استعادة الأنظمة) أو للدول (تكاليف مكافحة الجريمة، التأثير على الاستثمار).</p>
-            </div>
-            <div class="card">
-                <p class="card-title">التأثير على مؤسسات الدولة في اقتصادها:</p>
-                <p class="card-list-item">كما ذكر في أهمية دراسة الجرائم الحاسوبية، يمكن أن تستهدف البنى التحتية الاقتصادية أو الأنظمة المالية.</p>
-            </div>
-
-            <h3 class="text-blue-600">التأثيرات الاجتماعية والفردية:</h3>
-            <div class="card">
-                <p class="card-title">التأثير على فكر الإنسان وحياته:</p>
-                <p class="card-list-item">جرائم مثل الابتزاز الإلكتروني، التشهير، سرقة الهوية، والاستغلال الجنسي عبر الإنترنت لها آثار نفسية واجتماعية عميقة على الضحايا، وقد تدمر حياتهم وسمعتهم.</p>
-            </div>
-            <div class="card">
-                <p class="card-title">انتشار الابتزاز والاحتيال والاستغلال الجنسي:</p>
-                <p class="card-list-item">اتساع استخدام الإنترنت ساهم في انتشار هذه الجرائم بشكل خاص، مما يعكس خطراً اجتماعياً متزايداً.</p>
-            </div>
-
-            <h3 class="text-blue-600">التأثيرات على الأمن القومي والسياسي:</h3>
-            <div class="card">
-                <p class="card-title">خطر على الأمن القومي والسياسي والاقتصادي:</p>
-                <p class="card-list-item">يمكن استخدام الجرائم الإلكترونية في التجسس، أو شن هجمات سيبرانية تستهدف مؤسسات الدولة الحيوية، أو نشر معلومات مضللة لزعزعة الاستقرار السياسي والاقتصادي.</p>
-            </div>
-            <div class="card">
-                <p class="card-title">الدخول إلى مواقع إلكترونية للاطلاع على معلومات تمس الأمن الوطني:</p>
-                <p class="card-list-item">هذا الفعل مُجرّم بقانون الجرائم الإلكترونية (2018)، مما يعكس إدراك الدولة لخطورة هذا النوع من التهديدات.</p>
-            </div>
-
-            <h3 class="text-blue-600">التأثير على الثقة في البيئة الرقمية:</h3>
-            <div class="card">
-                <p class="card-list-item">انتشار الجرائم الإلكترونية يؤدي إلى تآكل الثقة في استخدام التكنولوجيا والإنترنت، مما قد يعيق التحول الرقمي والتطور التكنولوجي بشكل عام.</p>
-            </div>
-
-            <h3 class="text-blue-600">خلاصة خطورة وتأثير الجرائم الإلكترونية:</h3>
-            <div class="card">
-                <p class="card-list-item">الجرائم الإلكترونية تشكل تهديداً متعدد الأبعاد يتجاوز الخسائر المالية ليشمل الأفراد والمجتمع والدولة بأكملها. خطورتها تكمن في طبيعتها العابرة للحدود، صعوبة إثباتها، وتأثيراتها العميقة على الاقتصاد، الأمن، والحياة الاجتماعية للأفراد، مما يستدعي جهوداً تشريعية وتقنية ومجتمعية لمواجهتها.</p>
-            </div>
-        </section>
-
-        <!-- Section 3: أهمية الإعلام ودوره في مكافحة التطرف -->
-        <section id="section3" class="content-section">
-            <h2 class="text-blue-700">ثالثاً: أهمية الإعلام ودوره في مكافحة التطرف</h2>
-            <p class="text-lg leading-relaxed">على الرغم من أن هذا الموضوع لا يفصل بشكل مباشر "أهمية ودور الإعلام في مكافحة التطرف" كنقطة مستقلة، إلا أنه يمكن استنتاج هذا الدور من خلال جهود الدولة الأردنية المذكورة في مكافحة التطرف والتي يرتبط الإعلام بها ارتباطاً وثيقاً:</p>
-
-            <h3 class="text-blue-600">الإعلام كأداة توعية وإرشاد (مرتبط بدور وزارة الأوقاف):</h3>
-            <div class="card">
-                <p class="card-list-item">يذكر أن من جهود الدولة "وزارة الأوقاف ودورها الوعظ". الإعلام، وخاصة الإعلام الديني المعتدل أو البرامج التوعوية، يلعب دوراً حاسماً في نشر رسائل الاعتدال والتسامح التي تقدمها وزارة الأوقاف وغيرها من المؤسسات الدينية. يمكن للإعلام أن يكون منصة لرجال الدين المعتدلين لتفنيد الأفكار المتطرفة وتقديم الفهم الصحيح للدين.</p>
-            </div>
-
-            <h3 class="text-blue-600">الإعلام كأداة لتعزيز المفاهيم الديمقراطية:</h3>
-            <div class="card">
-                <p class="card-list-item">من جهود الدولة "تعزيز المفاهيم الديمقراطية". الإعلام يمكن أن يساهم في نشر ثقافة الديمقراطية، قبول الآخر، الحوار، والمشاركة السياسية البناءة. هذه المفاهيم تتعارض بشكل مباشر مع الفكر المتطرف الذي غالباً ما يكون إقصائياً ويرفض التعددية. البرامج الحوارية، التحقيقات الصحفية، والمواد التثقيفية يمكن أن تلعب دوراً في ذلك.</p>
-            </div>
-
-            <h3 class="text-blue-600">الإعلام كداعم لمؤسسات مكافحة التطرف (مثل مركز السلم المجتمعي):</h3>
-            <div class="card">
-                <p class="card-list-item">تأسيس "مركز السلم المجتمعي" هو أحد جهود الدولة. الإعلام يمكنه تسليط الضوء على أنشطة هذا المركز وأهدافه، ونشر رسائله المتعلقة بتعزيز السلم الأهلي ونبذ التطرف. كما يمكن للإعلام أن يستضيف خبراء من هذا المركز لتقديم تحليلات ورؤى حول ظاهرة التطرف وكيفية مواجهتها.</p>
-            </div>
-
-            <h3 class="text-blue-600">الإعلام كأداة لمواجهة خطاب الكراهية (وهو مرتبط بالتطرف):</h3>
-            <div class="card">
-                <p class="card-list-item">يعرف "خطاب الكراهية" بأنه "كل قول أو فعل من شأنه إثارة الفتنة والنعرات...". الإعلام المسؤول يجب أن يتجنب بث أو ترويج خطاب الكراهية، بل وأن يعمل على فضحه ومواجهته من خلال التحليل النقدي وكشف مصادره وأهدافه. هذا يتطلب مهنية عالية وحساً وطنياً.</p>
-            </div>
-
-            <h3 class="text-blue-600">الإعلام كأداة لكشف الإشاعات (التي قد تغذي التطرف):</h3>
-            <div class="card">
-                <p class="card-list-item">الإشاعات يمكن أن تستغل لإثارة الفتن وتغذية الفكر المتطرف. دور الإعلام في التحقق من المعلومات، عدم تداول الإشاعات، وتوعية الجمهور بخطرها يساهم بشكل غير مباشر في مكافحة البيئة التي قد ينمو فيها التطرف.</p>
-            </div>
-
-            <h3 class="text-blue-600">خلاصة دور الإعلام في مكافحة التطرف:</h3>
-            <div class="card">
-                <p class="card-list-item">يلعب الإعلام دوراً حيوياً في مكافحة التطرف من خلال نشر الوعي الديني المعتدل، تعزيز القيم الديمقراطية والتسامح، دعم جهود المؤسسات المعنية بمكافحة التطرف، مواجهة خطاب الكراهية، وكشف الإشاعات. يتطلب ذلك إعلاماً واعياً ومسؤولاً وملتزماً بالقيم الوطنية.</p>
-            </div>
-        </section>
-
-        <!-- Section 4: دور وأهمية مواقع التواصل الاجتماعي في الأمن الوطني والاجتماعي الأردني -->
-        <section id="section4" class="content-section">
-            <h2 class="text-blue-700">رابعاً: دور وأهمية مواقع التواصل الاجتماعي في الأمن الوطني والاجتماعي الأردني</h2>
-            <p class="text-lg leading-relaxed">تتناول مواقع التواصل الاجتماعي من منظور تأثيرها على الأمن الوطني والاجتماعي، مع التركيز على الجوانب السلبية والتحديات التي تطرحها، وكذلك الدعوة إلى استخدامها بشكل مسؤول:</p>
-
-            <h3 class="text-blue-600">مواقع التواصل الاجتماعي كمنصة لانتشار الظواهر السلبية:</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6"> <!-- Increased gap for more space -->
-                <div class="card">
-                    <p class="card-title">الإشاعة:</p>
-                    <p class="card-list-item">يذكر أن من أبرز الظواهر التي ساهمت مواقع التواصل الاجتماعي في انتشارها هي "الإشاعة". الإشاعات يمكن أن تهدد الأمن الاجتماعي من خلال بث معلومات خاطئة تثير القلق أو الفتنة أو تضر بسمعة الأفراد والمؤسسات. كما يمكن أن تمس الأمن الوطني إذا كانت تستهدف استقرار الدولة أو ثقة المواطنين بمؤسساتهم.</p>
-                </div>
-                <div class="card">
-                    <p class="card-title">التنمر الاجتماعي (كما ورد في عنوان مقال جلالة الملك):</p>
-                    <p class="card-list-item">على الرغم من أن هذا الموضوع لم يفصل التنمر، إلا أن الإشارة إليه تعكس إدراكاً بأن هذه المنصات يمكن أن تكون بيئة للتنمر الذي له آثار سلبية على السلامة النفسية والاجتماعية للأفراد.</p>
-                </div>
-            </div>
-
-            <h3 class="text-blue-600">مواقع التواصل الاجتماعي كأداة محتملة لخطاب الكراهية:</h3>
-            <div class="card">
-                <p class="card-list-item">على الرغم من أن هذا الموضوع لا يربط بشكل مباشر خطاب الكراهية بمواقع التواصل في هذا الجزء، إلا أن طبيعة هذه المنصات وسهولة النشر عليها تجعلها عرضة لاستخدامها في بث خطاب الكراهية الذي يهدد التماسك الاجتماعي والوحدة الوطنية.</p>
-            </div>
-
-            <h3 class="text-blue-600">التحديات الأمنية والاجتماعية التي تفرضها مواقع التواصل:</h3>
-            <div class="card">
-                <p class="card-list-item">نشر معلومات غير دقيقة أو مضللة: هذا يتطلب من المواطنين والمؤسسات التعامل بحذر مع ما يتم تداوله.</p>
-            </div>
-            <div class="card">
-                <p class="card-list-item">صعوبة السيطرة على المحتوى: الطبيعة المفتوحة لهذه المنصات تجعل التحكم الكامل في المحتوى المتداول أمراً صعباً.</p>
-            </div>
-            <div class="card">
-                <p class="card-list-item">إمكانية استغلالها من قبل جهات معادية أو متطرفة: لنشر أفكارها أو تجنيد الأفراد أو زعزعة الاستقرار.</p>
-            </div>
-
-            <h3 class="text-blue-600">الدعوة إلى الاستخدام المسؤول والواعي لمواقع التواصل (من خلال مقال جلالة الملك):</h3>
-            <div class="card">
-                <p class="card-title">ضرورة أن توفر الحكومة المعلومات الدقيقة للوطن:</p>
-                <p class="card-list-item">لمواجهة الإشاعات والمعلومات المضللة التي قد تنتشر عبر هذه المنصات، مما يعزز الثقة والأمن المعلوماتي.</p>
-            </div>
-            <div class="card">
-                <p class="card-title">تطوير التشريعات بما يتضمن صون وحماية حرية التعبير (مع ضبط الاستخدام السلبي):</p>
-                <p class="card-list-item">الحاجة إلى إطار قانوني ينظم استخدام هذه المنصات، بحيث يحمي حرية التعبير المسؤولة ويجرم الاستخدامات الضارة كبث الكراهية أو الإشاعات التي تهدد الأمن.</p>
-            </div>
-            <div class="card">
-                <p class="card-title">القضاء على الإشاعة ومنع خطاب الكراهية:</p>
-                <p class="card-list-item">التأكيد على أن هذه مسؤولية مشتركة تتطلب جهوداً من الحكومة والمجتمع ومستخدمي هذه المنصات.</p>
-            </div>
-
-            <h3 class="text-blue-600">أهمية الوعي المجتمعي في التعامل مع مواقع التواصل:</h3>
-            <div class="card">
-                <p class="card-list-item">يشير إلى أن التعامل مع خطر الإشاعة يتطلب عدم تصديقها والتثبت منها، وعدم تداولها، وتكاتف المجتمع لمواجهتها. هذا الوعي ضروري للحفاظ على الأمن الاجتماعي والوطني في ظل التأثير الكبير لهذه المنصات.</p>
-            </div>
-
-            <h3 class="text-blue-600">خلاصة دور وأهمية مواقع التواصل الاجتماعي في الأمن الوطني والاجتماعي:</h3>
-            <div class="card">
-                <p class="card-list-item">مواقع التواصل الاجتماعي سلاح ذو حدين. يمكن أن تكون أداة لنشر الوعي والمعرفة والتواصل الإيجابي، ولكنها في الوقت ذاته تشكل تحدياً للأمن الوطني والاجتماعي إذا استُخدمت بشكل سلبي لنشر الإشاعات، خطاب الكراهية، أو التنمر. الأهمية تكمن في ضرورة الاستخدام المسؤول والواعي لهذه المنصات، وتطوير التشريعات المناسبة، وتعزيز دور الحكومة في توفير المعلومات الدقيقة، وتكاتف المجتمع لمواجهة المخاطر الناجمة عنها.</p>
-            </div>
-        </section>
-        
-        <!-- Footer for Copyright -->
-        <footer class="footer">
-            <p>جميع الحقوق محفوظة &copy; 2025 قيس الجازي</p>
-        </footer>
+        </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const contentSections = document.querySelectorAll('.content-section');
+        const questions = [
+            // Section 1: الإعلام ودوره الوطني (12 questions)
+            {
+                question: "ما هو الدور المحوري الذي تلعبه المؤسسات الإعلامية في المجتمع؟",
+                options: ["نقل الأخبار الترفيهية فقط", "بناء التربية الوطنية للمجتمع", "ترويج المنتجات التجارية", "عكس الآراء الحكومية فقط"],
+                answer: "بناء التربية الوطنية للمجتمع"
+            },
+            {
+                question: "أي من التالي لا يعتبر من المؤسسات الإعلامية الوطنية الرئيسية المذكورة في النص؟",
+                options: ["مؤسسة الإذاعة والتلفزيون", "وكالة الأنباء الأردنية (بترا)", "مركز المعلومات الوطني", "شركات الإعلانات الخاصة"],
+                answer: "شركات الإعلانات الخاصة"
+            },
+            {
+                question: "من الوظائف التربوية والوطنية للإعلام، أي مما يلي يساهم في تعزيز الحوار الوطني وفهم وجهات النظر المختلفة؟",
+                options: ["نقل الأخبار الاقتصادية", "التعبير عن الاتجاهات المختلفة في المجتمع", "توجيه المنظومة القيمية للمجتمع", "الرد على الدعاية المضادة"],
+                answer: "التعبير عن الاتجاهات المختلفة في المجتمع"
+            },
+            {
+                question: "كيف يساهم الإعلام في تطوير الذات الوطنية والحفاظ على شخصية المجتمع وهويته؟",
+                options: ["من خلال التركيز على الأخبار العالمية فقط", "بتوجيه المنظومة القيمية للمجتمع نحو القيم الإيجابية", "بتجاهل الآراء المختلفة", "بفرض رأي واحد على الجمهور"],
+                answer: "بتوجيه المنظومة القيمية للمجتمع نحو القيم الإيجابية"
+            },
+            {
+                question: "في سياق الرد على الدعاية المضادة، ماذا يعني دور الإعلام في حماية الأمن الفكري والمعنوي للمجتمع؟",
+                options: ["منع أي نقد للحكومة", "مواجهة الحملات التي تستهدف النيل من الوطن أو رموزه أو قيمه", "نشر المعلومات السرية للدولة", "التركيز على الإنجازات فقط"],
+                answer: "مواجهة الحملات التي تستهدف النيل من الوطن أو رموزه أو قيمه"
+            },
+            {
+                question: "لكي يكون الإعلام فعالاً في أداء دوره الوطني، يجب أن يستند إلى كل مما يلي باستثناء:",
+                options: ["الحوار", "الإبداع", "فرض الرأي الواحد", "حرية الرأي المسؤولة"],
+                answer: "فرض الرأي الواحد"
+            },
+            {
+                question: "ما هو أحد التحديات الرئيسية التي تواجه الدور الوطني للإعلام؟",
+                options: ["زيادة عدد الصحفيين", "نيل الثقة بين الجمهور والمؤسسات الإعلامية", "سهولة الحصول على المعلومات", "قلة المنافسة الإعلامية"],
+                answer: "نيل الثقة بين الجمهور والمؤسسات الإعلامية"
+            },
+            {
+                question: "ماذا شهد عهد الملك عبد الله الثاني فيما يتعلق بالإعلام؟",
+                options: ["تقييد الحريات الصحفية", "رفع مستوى الحرية الصحفية والدعوة لإعلام وطني ومسؤول", "إلغاء وكالة الأنباء الأردنية", "تجاهل دور الإعلام في التنمية"],
+                answer: "رفع مستوى الحرية الصحفية والدعوة لإعلام وطني ومسؤول"
+            },
+            {
+                question: "ما هي إحدى وظائف الإعلام التي تساهم في إبقاء المواطن على اطلاع بما يجري؟",
+                options: ["توجيه المنظومة القيمية", "نقل الأخبار المختلفة", "الرد على الدعاية المضادة", "تعزيز الحوار الوطني"],
+                answer: "نقل الأخبار المختلفة"
+            },
+            {
+                question: "لماذا يعتبر إشراك المواطنين في توجيه الرسالة الإعلامية أمراً ضرورياً؟",
+                options: ["لزيادة الأرباح المالية", "لتعزيز الثقة واحترام آرائهم", "لتقليل التكاليف التشغيلية", "لفرض وجهة نظر واحدة"],
+                answer: "لتعزيز الثقة واحترام آرائهم"
+            },
+            {
+                question: "أي من التالي يعكس خلاصة دور الإعلام الوطني؟",
+                options: ["أداة للتسلية فقط", "أداة حيوية للتنشئة الوطنية والدفاع عن مصالح الوطن", "مصدر للأخبار الكاذبة", "منصة لخطاب الكراهية"],
+                answer: "أداة حيوية للتنشئة الوطنية والدفاع عن مصالح الوطن"
+            },
+            {
+                question: "ما هو أحد شروط فعالية الدور الوطني للإعلام المتعلق بالزمن؟",
+                options: ["التباطؤ في نقل المعلومات", "التسارع في نقل المعلومات", "نقل المعلومات بعد يومين", "عدم نقل المعلومات إطلاقاً"],
+                answer: "التسارع في نقل المعلومات"
+            },
 
-            // Function to show a specific section and hide others
-            const showSection = (sectionId) => {
-                contentSections.forEach(section => {
-                    section.classList.remove('active');
-                    // Reset animation for hidden sections
-                    section.style.animation = 'none';
-                    section.offsetHeight; /* Trigger reflow */
-                    section.style.animation = null;
-                });
-                const activeSection = document.getElementById(sectionId);
-                if (activeSection) {
-                    activeSection.classList.add('active');
-                    // Apply animation to active section
-                    activeSection.style.animation = 'fadeInFromBottom 0.6s ease-out forwards';
-                    // Scroll to the top of the container after showing the section
-                    document.querySelector('.container').scrollTop = 0;
+            // Section 2: الجرائم الإلكترونية: خطورتها وتأثيرها (13 questions)
+            {
+                question: "إحدى الخصائص الخطيرة للجرائم الإلكترونية هي أنها 'عابرة للحدود'. ما الذي ينتج عن هذه الخاصية؟",
+                options: ["سهولة ملاحقة مرتكبيها", "صعوبة ملاحقة مرتكبيها وتأثر سيادة الدول", "اقتصارها على دولة واحدة", "عدم تأثيرها على الأمن القومي"],
+                answer: "صعوبة ملاحقة مرتكبيها وتأثر سيادة الدول"
+            },
+            {
+                question: "ماذا يقصد بـ 'تعدد المجني عليهم' في سياق الجرائم الإلكترونية؟",
+                options: ["استهداف فرد واحد فقط", "القدرة على استهداف عدد كبير من الضحايا في وقت واحد", "استهداف الشركات الكبرى فقط", "استهداف الحكومات فقط"],
+                answer: "القدرة على استهداف عدد كبير من الضحايا في وقت واحد"
+            },
+            {
+                question: "لماذا يعتبر 'صعوبة الإثبات' تحدياً كبيراً في مكافحة الجرائم الإلكترونية؟",
+                options: ["لأن الأدلة الرقمية غير موجودة", "لأن جمع الأدلة الرقمية وتأمينها أمر صعب", "لأن المجرمين لا يتركون أي أثر", "لأن القوانين لا تعترف بالأدلة الرقمية"],
+                answer: "لأن جمع الأدلة الرقمية وتأمينها أمر صعب"
+            },
+            {
+                question: "على الرغم من أن الجرائم الإلكترونية 'هادئة بطبيعتها'، إلا أن خطورتها شديدة. ما هو أحد الآثار المدمرة التي يمكن أن تسببها؟",
+                options: ["تغيير لون شاشة الكمبيوتر", "تدمير على المستوى المالي، النفسي، أو الأمني", "زيادة سرعة الإنترنت", "تحسين أداء الأجهزة"],
+                answer: "تدمير على المستوى المالي، النفسي، أو الأمني"
+            },
+            {
+                question: "أي من التالي يعتبر من التأثيرات الاقتصادية الباهظة للجرائم الإلكترونية؟",
+                options: ["زيادة السياحة", "تعطيل أعمال المؤسسات وسرقة البيانات", "تطوير البنية التحتية", "تحسين العلاقات الدولية"],
+                answer: "تعطيل أعمال المؤسسات وسرقة البيانات"
+            },
+            {
+                question: "ما هو أحد التأثيرات الاجتماعية والفردية العميقة للجرائم الإلكترونية؟",
+                options: ["زيادة التواصل الاجتماعي", "الابتزاز الإلكتروني والتشهير وسرقة الهوية", "تحسين المهارات التقنية", "توفير فرص عمل جديدة"],
+                answer: "الابتزاز الإلكتروني والتشهير وسرقة الهوية"
+            },
+            {
+                question: "كيف يمكن أن تؤثر الجرائم الإلكترونية على الأمن القومي والسياسي؟",
+                options: ["من خلال تعزيز الديمقراطية", "من خلال التجسس وشن هجمات سيبرانية تستهدف مؤسسات الدولة", "من خلال نشر الثقافة الإيجابية", "من خلال زيادة الاستثمار الأجنبي"],
+                answer: "من خلال التجسس وشن هجمات سيبرانية تستهدف مؤسسات الدولة"
+            },
+            {
+                question: "ماذا يعني تجريم 'الدخول إلى مواقع إلكترونية للاطلاع على معلومات تمس الأمن الوطني'؟",
+                options: ["منع استخدام الإنترنت", "إدراك الدولة لخطورة التهديدات السيبرانية", "تشجيع التجسس", "السماح بالوصول غير المصرح به للمعلومات"],
+                answer: "إدراك الدولة لخطورة التهديدات السيبرانية"
+            },
+            {
+                question: "ما هو التأثير الرئيسي لانتشار الجرائم الإلكترونية على الثقة في البيئة الرقمية؟",
+                options: ["زيادة الثقة", "تآكل الثقة في استخدام التكنولوجيا والإنترنت", "عدم وجود تأثير", "تحسين الأمن السيبراني"],
+                answer: "تآكل الثقة في استخدام التكنولوجيا والإنترنت"
+            },
+            {
+                question: "أي نوع من الجرائم الإلكترونية يركز على سرقة الأموال من الأفراد؟",
+                options: ["التشهير", "الاحتيال", "التنمر", "الابتزاز"],
+                answer: "الاحتيال"
+            },
+            {
+                question: "ما هو الغرض من استخدام الجرائم الإلكترونية لنشر معلومات مضللة؟",
+                options: ["لزيادة الوعي العام", "لزعزعة الاستقرار السياسي والاقتصادي", "لتحسين سمعة الدولة", "لتشجيع النقاش البناء"],
+                answer: "لزعزعة الاستقرار السياسي والاقتصادي"
+            },
+            {
+                question: "ما هي الآثار النفسية للابتزاز الإلكتروني على الضحايا؟",
+                options: ["زيادة الثقة بالنفس", "آثار نفسية واجتماعية عميقة قد تدمر حياتهم", "تحسين العلاقات الاجتماعية", "تطوير المهارات القيادية"],
+                answer: "آثار نفسية واجتماعية عميقة قد تدمر حياتهم"
+            },
+            {
+                question: "ما هو القانون الذي يجرم الدخول غير المصرح به للمعلومات التي تمس الأمن الوطني في الأردن؟",
+                options: ["قانون المرور", "قانون الجرائم الإلكترونية (2018)", "قانون العمل", "قانون الأحوال الشخصية"],
+                answer: "قانون الجرائم الإلكترونية (2018)"
+            },
+
+            // Section 3: أهمية الإعلام ودوره في مكافحة التطرف (12 questions)
+            {
+                question: "كيف يلعب الإعلام دوراً حاسماً في نشر رسائل الاعتدال والتسامح؟",
+                options: ["بث الأخبار الرياضية فقط", "من خلال الإعلام الديني المعتدل والبرامج التوعوية", "بفرض آراء متطرفة", "بتجاهل القضايا الدينية"],
+                answer: "من خلال الإعلام الديني المعتدل والبرامج التوعوية"
+            },
+            {
+                question: "أي من جهود الدولة في مكافحة التطرف يرتبط الإعلام بها ارتباطاً وثيقاً كأداة توعية وإرشاد؟",
+                options: ["تطوير البنية التحتية", "وزارة الأوقاف ودورها الوعظ", "بناء المدارس الجديدة", "زيادة الصادرات"],
+                answer: "وزارة الأوقاف ودورها الوعظ"
+            },
+            {
+                question: "كيف يساهم الإعلام في تعزيز المفاهيم الديمقراطية لمواجهة الفكر المتطرف؟",
+                options: ["بنشر ثقافة الإقصاء", "بنشر ثقافة الديمقراطية، قبول الآخر، والحوار البناء", "بتقييد حرية التعبير", "بفرض الرأي الواحد"],
+                answer: "بنشر ثقافة الديمقراطية، قبول الآخر، والحوار البناء"
+            },
+            {
+                question: "ما هو دور الإعلام في دعم مؤسسات مكافحة التطرف مثل مركز السلم المجتمعي؟",
+                options: ["تجاهل أنشطتها", "تسليط الضوء على أنشطتها وأهدافها ونشر رسائلها", "نقد عملها باستمرار", "منعها من التواصل مع الجمهور"],
+                answer: "تسليط الضوء على أنشطتها وأهدافها ونشر رسائلها"
+            },
+            {
+                question: "ماذا يتطلب من الإعلام المسؤول عند مواجهة خطاب الكراهية؟",
+                options: ["بث خطاب الكراهية", "تجنب بثه أو ترويجه والعمل على فضحه ومواجهته", "تجاهل وجوده", "التعاون مع مروجي الكراهية"],
+                answer: "تجنب بثه أو ترويجه والعمل على فضحه ومواجهته"
+            },
+            {
+                question: "كيف يساهم دور الإعلام في كشف الإشاعات بشكل غير مباشر في مكافحة التطرف؟",
+                options: ["بزيادة تداول الإشاعات", "بإثارة الفتن", "بالتحقق من المعلومات وتوعية الجمهور بخطرها", "بتجاهل الإشاعات تماماً"],
+                answer: "بالتحقق من المعلومات وتوعية الجمهور بخطرها"
+            },
+            {
+                question: "ما هي القيم التي يدعمها الإعلام في مكافحة التطرف؟",
+                options: ["التعصب", "التسامح", "الإقصاء", "التمييز"],
+                answer: "التسامح"
+            },
+            {
+                question: "ماذا يعني أن الإعلام يجب أن يكون 'مسؤولاً' في سياق مكافحة التطرف؟",
+                options: ["أن يكون تابعاً للحكومة فقط", "أن يلتزم بالقيم الوطنية ويتجنب إثارة الفتن", "أن ينشر أي معلومات دون تدقيق", "أن يركز على الجانب الترفيهي فقط"],
+                answer: "أن يلتزم بالقيم الوطنية ويتجنب إثارة الفتن"
+            },
+            {
+                question: "ما هو دور الإعلام في تفنيد الأفكار المتطرفة؟",
+                options: ["نشرها دون تعليق", "تقديم الفهم الصحيح للدين والرد على الشبهات", "تجاهل وجودها", "تشجيعها سراً"],
+                answer: "تقديم الفهم الصحيح للدين والرد على الشبهات"
+            },
+            {
+                question: "أي من التالي هو أحد جهود الدولة الأردنية في مكافحة التطرف المذكورة في النص؟",
+                options: ["إلغاء الحوار الوطني", "تأسيس مركز السلم المجتمعي", "منع التعبير عن الرأي", "زيادة الرقابة على الإعلام"],
+                answer: "تأسيس مركز السلم المجتمعي"
+            },
+            {
+                question: "ما هو تعريف 'خطاب الكراهية' المذكور في النص؟",
+                options: ["كل قول أو فعل يهدف إلى تعزيز الوحدة", "كل قول أو فعل من شأنه إثارة الفتنة والنعرات", "كل قول أو فعل يعبر عن الرأي الحر", "كل قول أو فعل يهدف إلى الترفيه"],
+                answer: "كل قول أو فعل من شأنه إثارة الفتنة والنعرات"
+            },
+            {
+                question: "ما هو الهدف من تعزيز المفاهيم الديمقراطية في مكافحة التطرف؟",
+                options: ["رفض التعددية", "تعزيز الحوار وقبول الآخر", "إقصاء الآراء المخالفة", "التركيز على الانقسامات"],
+                answer: "تعزيز الحوار وقبول الآخر"
+            },
+
+            // Section 4: دور وأهمية مواقع التواصل الاجتماعي في الأمن الوطني والاجتماعي الأردني (13 questions)
+            {
+                question: "ما هي إحدى أبرز الظواهر السلبية التي ساهمت مواقع التواصل الاجتماعي في انتشارها؟",
+                options: ["نشر المعرفة", "الإشاعة", "التعاون الدولي", "التواصل الإيجابي"],
+                answer: "الإشاعة"
+            },
+            {
+                question: "كيف يمكن للإشاعات أن تهدد الأمن الاجتماعي والوطني؟",
+                options: ["بزيادة الترابط المجتمعي", "ببث معلومات خاطئة تثير القلق أو الفتنة أو تضر بالسمعة", "بتعزيز الثقة بين الأفراد", "بتحسين الأداء الحكومي"],
+                answer: "ببث معلومات خاطئة تثير القلق أو الفتنة أو تضر بالسمعة"
+            },
+            {
+                question: "ماذا تعكس الإشارة إلى 'التنمر الاجتماعي' في سياق مواقع التواصل الاجتماعي؟",
+                options: ["أنها بيئة لتعزيز الصداقات", "أنها بيئة للتنمر الذي له آثار سلبية على السلامة النفسية والاجتماعية", "أنها منصة للدعم النفسي", "أنها مكان لتبادل الخبرات الإيجابية"],
+                answer: "أنها بيئة للتنمر الذي له آثار سلبية على السلامة النفسية والاجتماعية"
+            },
+            {
+                question: "لماذا تعتبر مواقع التواصل الاجتماعي عرضة لاستخدامها في بث خطاب الكراهية؟",
+                options: ["لأنها تشجع التسامح", "لطبيعتها المفتوحة وسهولة النشر عليها", "لأنها تفرض الرقابة الصارمة", "لأنها تمنع الآراء المخالفة"],
+                answer: "لطبيعتها المفتوحة وسهولة النشر عليها"
+            },
+            {
+                question: "أي من التالي لا يعتبر من التحديات الأمنية والاجتماعية التي تفرضها مواقع التواصل؟",
+                options: ["نشر معلومات غير دقيقة", "سهولة السيطرة على المحتوى", "إمكانية استغلالها من قبل جهات معادية", "صعوبة التحكم الكامل في المحتوى المتداول"],
+                answer: "سهولة السيطرة على المحتوى"
+            },
+            {
+                question: "ما هو أحد الحلول المقترحة لمواجهة الإشاعات والمعلومات المضللة عبر مواقع التواصل؟",
+                options: ["منع استخدام الإنترنت", "ضرورة أن توفر الحكومة المعلومات الدقيقة للوطن", "إغلاق جميع منصات التواصل", "تجاهل الإشاعات تماماً"],
+                answer: "ضرورة أن توفر الحكومة المعلومات الدقيقة للوطن"
+            },
+            {
+                question: "ما هي الحاجة التي تتطلب تطوير التشريعات المتعلقة بمواقع التواصل الاجتماعي؟",
+                options: ["لتقييد حرية التعبير المطلقة", "لصون وحماية حرية التعبير المسؤولة وتجريم الاستخدامات الضارة", "لزيادة الأرباح للشركات", "لتقليل عدد المستخدمين"],
+                answer: "لصون وحماية حرية التعبير المسؤولة وتجريم الاستخدامات الضارة"
+            },
+            {
+                question: "من هي الأطراف المسؤولة عن القضاء على الإشاعة ومنع خطاب الكراهية؟",
+                options: ["الحكومة فقط", "المجتمع فقط", "مستخدمو المنصات فقط", "مسؤولية مشتركة تتطلب جهوداً من الحكومة والمجتمع والمستخدمين"],
+                answer: "مسؤولية مشتركة تتطلب جهوداً من الحكومة والمجتمع والمستخدمين"
+            },
+            {
+                question: "ما هو الوعي الضروري للحفاظ على الأمن الاجتماعي والوطني في ظل التأثير الكبير لمواقع التواصل؟",
+                options: ["تصديق كل ما ينشر", "عدم تصديق الإشاعات والتثبت منها وعدم تداولها", "نشر الإشاعات بسرعة", "تجاهل الأخبار تماماً"],
+                answer: "عدم تصديق الإشاعات والتثبت منها وعدم تداولها"
+            },
+            {
+                question: "ما هو أحد الاستخدامات السلبية لمواقع التواصل الاجتماعي التي تهدد التماسك الاجتماعي؟",
+                options: ["بث خطاب الكراهية", "نشر أخبار إيجابية", "تعزيز الحوار", "توفير المعلومات الصحيحة"],
+                answer: "بث خطاب الكراهية"
+            },
+            {
+                question: "لماذا تشكل مواقع التواصل الاجتماعي تحدياً للأمن الوطني والاجتماعي إذا استُخدمت بشكل سلبي؟",
+                options: ["لأنها تزيد من التماسك المجتمعي", "لأنها أداة لنشر الوعي", "لأنها يمكن أن تنشر الإشاعات والتنمر وتزعزع الاستقرار", "لأنها تعزز التواصل الإيجابي"],
+                answer: "لأنها يمكن أن تنشر الإشاعات والتنمر وتزعزع الاستقرار"
+            },
+            {
+                question: "ما هي إحدى التحديات المرتبطة بالتحكم في المحتوى المتداول على مواقع التواصل؟",
+                options: ["سهولة التحكم الكامل", "الطبيعة المفتوحة لهذه المنصات تجعل التحكم الكامل صعباً", "عدم وجود محتوى ضار", "التحكم يتم تلقائياً"],
+                answer: "الطبيعة المفتوحة لهذه المنصات تجعل التحكم الكامل صعباً"
+            },
+            {
+                question: "ما هو الهدف من تعزيز دور الحكومة في توفير المعلومات الدقيقة؟",
+                options: ["لزيادة الإشاعات", "لمواجهة الإشاعات والمعلومات المضللة", "لتقليل الثقة العامة", "لتقييد وصول المواطنين للمعلومات"],
+                answer: "لمواجهة الإشاعات والمعلومات المضللة"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let userAnswers = new Array(questions.length).fill(null);
+        let score = 0;
+
+        const startScreen = document.getElementById('start-screen');
+        const examScreen = document.getElementById('exam-screen');
+        const resultsScreen = document.getElementById('results-screen');
+        const startExamBtn = document.getElementById('start-exam-btn');
+        const questionNumberDisplay = document.getElementById('question-number');
+        const questionTextDisplay = document.getElementById('question-text');
+        const optionsGrid = document.getElementById('options-grid');
+        const feedbackMessage = document.getElementById('feedback-message');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const scoreDisplay = document.getElementById('score-display');
+        const reviewExamBtn = document.getElementById('review-exam-btn');
+        const questionReviewList = document.getElementById('question-review-list');
+
+        // Function to render the current question
+        function renderQuestion() {
+            const q = questions[currentQuestionIndex];
+            questionNumberDisplay.textContent = `السؤال ${currentQuestionIndex + 1} من ${questions.length}`;
+            questionTextDisplay.textContent = q.question;
+            optionsGrid.innerHTML = ''; // Clear previous options
+            feedbackMessage.style.display = 'none'; // Hide feedback message
+
+            const hasAnswered = userAnswers[currentQuestionIndex] !== null;
+
+            q.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.classList.add('option-button');
+                button.textContent = option;
+                button.dataset.option = option;
+
+                if (hasAnswered) {
+                    button.disabled = true; // Disable if already answered
+                    if (option === q.answer) {
+                        button.classList.add('correct');
+                    }
+                    if (userAnswers[currentQuestionIndex] === option && userAnswers[currentQuestionIndex] !== q.answer) {
+                        button.classList.add('incorrect');
+                    } else if (userAnswers[currentQuestionIndex] === option && userAnswers[currentQuestionIndex] === q.answer) {
+                        button.classList.add('selected');
+                    }
                 }
 
-                // Update active class on nav links
-                navLinks.forEach(link => {
-                    if (link.dataset.section === sectionId) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
+                button.addEventListener('click', () => {
+                    if (!hasAnswered) { // Only allow selection if not already answered
+                        selectOption(option, button);
                     }
                 });
-            };
-
-            // Add click event listeners to navigation links
-            navLinks.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    event.preventDefault(); // Prevent default anchor link behavior
-                    const sectionId = event.target.dataset.section;
-                    showSection(sectionId);
-                    // Update URL hash without jumping
-                    history.pushState(null, '', `#${sectionId}`);
-                });
+                optionsGrid.appendChild(button);
             });
 
-            // Show the first section by default on load or based on URL hash
-            const initialSection = window.location.hash ? window.location.hash.substring(1) : 'section1';
-            showSection(initialSection);
+            // Show feedback message if already answered
+            if (hasAnswered) {
+                const selectedOption = userAnswers[currentQuestionIndex];
+                const correctAnswer = q.answer;
+                if (selectedOption === correctAnswer) {
+                    feedbackMessage.textContent = 'إجابة صحيحة! 🎉';
+                    feedbackMessage.classList.add('correct');
+                    feedbackMessage.classList.remove('incorrect');
+                } else {
+                    feedbackMessage.textContent = `إجابة خاطئة. الإجابة الصحيحة هي: ${correctAnswer}`;
+                    feedbackMessage.classList.add('incorrect');
+                    feedbackMessage.classList.remove('correct');
+                }
+                feedbackMessage.style.display = 'block';
+            }
 
-            // Listen for hash changes (e.g., if user navigates with browser back/forward)
-            window.addEventListener('hashchange', () => {
-                const newSection = window.location.hash ? window.location.hash.substring(1) : 'section1';
-                showSection(newSection);
+            updateNavigationButtons();
+        }
+
+        // Function to handle option selection and provide immediate feedback
+        function selectOption(selectedOption, clickedButton) {
+            userAnswers[currentQuestionIndex] = selectedOption;
+            const correctAnswer = questions[currentQuestionIndex].answer;
+
+            // Disable all options for the current question
+            Array.from(optionsGrid.children).forEach(button => {
+                button.disabled = true;
+                if (button.dataset.option === correctAnswer) {
+                    button.classList.add('correct'); // Highlight the correct answer
+                }
+                if (button.dataset.option === selectedOption && selectedOption !== correctAnswer) {
+                    button.classList.add('incorrect'); // Highlight user's incorrect choice
+                } else if (button.dataset.option === selectedOption && selectedOption === correctAnswer) {
+                    button.classList.add('selected'); // Keep selected for correct answer
+                }
             });
+
+            // Display feedback message
+            if (selectedOption === correctAnswer) {
+                feedbackMessage.textContent = 'إجابة صحيحة! 🎉';
+                feedbackMessage.classList.add('correct');
+                feedbackMessage.classList.remove('incorrect');
+            } else {
+                feedbackMessage.textContent = `إجابة خاطئة. الإجابة الصحيحة هي: ${correctAnswer}`;
+                feedbackMessage.classList.add('incorrect');
+                feedbackMessage.classList.remove('correct');
+            }
+            feedbackMessage.style.display = 'block';
+        }
+
+        // Function to update navigation button states
+        function updateNavigationButtons() {
+            prevBtn.disabled = currentQuestionIndex === 0;
+            nextBtn.disabled = currentQuestionIndex === questions.length - 1;
+
+            if (currentQuestionIndex === questions.length - 1) {
+                submitBtn.classList.remove('hidden');
+            } else {
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        // Event listeners for navigation
+        prevBtn.addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                renderQuestion();
+            }
         });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                renderQuestion();
+            }
+        });
+
+        // Function to calculate and display results
+        function calculateResults() {
+            score = 0;
+            questions.forEach((q, index) => {
+                if (userAnswers[index] === q.answer) {
+                    score++;
+                }
+            });
+
+            startScreen.classList.remove('active');
+            examScreen.classList.remove('active');
+            resultsScreen.classList.add('active');
+            scoreDisplay.textContent = `${score} / ${questions.length}`;
+        }
+
+        // Event listener for submit button
+        submitBtn.addEventListener('click', calculateResults);
+
+        // Event listener for start exam button
+        startExamBtn.addEventListener('click', () => {
+            startScreen.classList.remove('active');
+            examScreen.classList.add('active');
+            currentQuestionIndex = 0;
+            userAnswers = new Array(questions.length).fill(null); // Reset answers
+            renderQuestion();
+        });
+
+        // Function to review answers
+        reviewExamBtn.addEventListener('click', () => {
+            questionReviewList.classList.toggle('hidden');
+            if (!questionReviewList.classList.contains('hidden')) {
+                renderReviewList();
+            }
+        });
+
+        function renderReviewList() {
+            questionReviewList.innerHTML = ''; // Clear previous review
+            questions.forEach((q, index) => {
+                const reviewItem = document.createElement('div');
+                reviewItem.classList.add('review-item');
+
+                const qText = document.createElement('p');
+                qText.classList.add('review-question-text');
+                qText.textContent = `السؤال ${index + 1}: ${q.question}`;
+                reviewItem.appendChild(qText);
+
+                q.options.forEach(option => {
+                    const optionText = document.createElement('p');
+                    optionText.classList.add('review-answer-text');
+                    optionText.textContent = option;
+
+                    if (option === q.answer) {
+                        optionText.classList.add('correct-answer');
+                        optionText.innerHTML += ' (الإجابة الصحيحة)';
+                    }
+                    if (userAnswers[index] === option && userAnswers[index] !== q.answer) {
+                        optionText.classList.add('user-selected-incorrect');
+                        optionText.innerHTML += ' (إجابتك)';
+                    } else if (userAnswers[index] === null && option === q.answer) {
+                        optionText.classList.add('not-selected');
+                        optionText.innerHTML += ' (لم يتم الإجابة)';
+                    } else if (userAnswers[index] === option && userAnswers[index] === q.answer) {
+                        optionText.classList.add('correct-answer');
+                        optionText.innerHTML += ' (إجابتك الصحيحة)';
+                    }
+                    reviewItem.appendChild(optionText);
+                });
+                questionReviewList.appendChild(reviewItem);
+            });
+        }
+
+        // Initial render for the start screen
+        // No need to call renderQuestion here, as it's called after startExamBtn click.
     </script>
 </body>
 </html>
